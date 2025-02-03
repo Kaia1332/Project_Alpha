@@ -5,45 +5,68 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #CAF0F8; /* Lightest blue from the palette */
+    background-color: #CAF0F8; /* Lightest blue */
     margin: 0;
 }
 
+/* Centered container with uniform padding */
 .container {
     background: white;
-    padding: 50px;
-    padding-right: 70px;
-    border-radius: 10px;
+    padding: 40px; /* Even padding */
+    border-radius: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 320px;
+    width: 350px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures child elements stay centered */
 }
 
+/* Header styling */
 h2 {
     color: #0077B6; /* Medium blue */
-    margin-bottom: 70px;
+    margin-bottom: 20px; /* Adjusted for better spacing */
+    font-size: 32px; /* Slightly smaller for better balance */
 }
 
+/* Form styling */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form elements */
+    align-items: center;
+}
+
+/* Label styling */
+label {
+    align-self: flex-start; /* Aligns labels to the left */
+    font-weight: bold;
+    color: #023E8A;
+}
+
+/* Input styling */
 input {
     width: 100%;
     padding: 10px;
-    margin: 3px 0;
     border: 1px solid #90E0EF; /* Light blue */
     border-radius: 5px;
-    background-color: #ADE8F4; /* Soft background blue */
+    background-color: #ADE8F4; /* Soft blue */
     color: #03045E; /* Dark navy for text */
+    font-size: 16px;
 }
 
-input:focus { /* When clicking inside the forms*/
+/* Input focus effect */
+input:focus {
     outline: none;
-    border-color: #0096C7; /* Slightly darker blue */
+    border-color: #0096C7; /* Darker blue */
     background-color: #CAF0F8; /* Lightest blue */
 }
 
+/* Button styling */
 button {
     width: 100%;
     padding: 12px;
-    margin-top: 10px;
     background: #0077B6; /* Main blue */
     color: white;
     border: none;
@@ -53,24 +76,11 @@ button {
     transition: background 0.3s ease;
 }
 
+/* Button hover and active states */
 button:hover {
     background: #023E8A; /* Darker blue */
 }
 
 button:active {
     background: #03045E; /* Deep navy blue */
-}
-
-/*  Flex container padding*/
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Spacing between the form elemtents here */
-}
-
-input {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 50px; /* Adds space after each input */
 }
