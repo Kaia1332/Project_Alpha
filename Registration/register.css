@@ -1,0 +1,60 @@
+/* Warm blue and white theme based on Coolors palette */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #CAF0F8; /* Lightest blue from the palette */
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+h2 {
+    color: #0077B6; /* Medium blue */
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #90E0EF; /* Light blue */
+    border-radius: 5px;
+    background-color: #ADE8F4; /* Soft background blue */
+    color: #03045E; /* Dark navy for text */
+}
+
+input:focus {
+    outline: none;
+    border-color: #0096C7; /* Slightly darker blue */
+    background-color: #CAF0F8; /* Lightest blue */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0077B6; /* Main blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #023E8A; /* Darker blue */
+}
+
+button:active {
+    background: #03045E; /* Deep navy blue */
+}
