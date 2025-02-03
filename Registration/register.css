@@ -12,7 +12,7 @@ body {
 /* Centered container with uniform padding */
 .container {
     background: white;
-    padding: 5vh; /* Adjusted for uniform padding */
+    padding: 10vh; /* Adjusted for uniform padding */
     border-radius: 4vh;
     box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
     width: 40vh; /* Responsive width */
@@ -46,7 +46,7 @@ label {
     color: #023E8A;
 }
 
-/* User Type label */
+/* specific last User Type label */
 .user-type-label {
     display: block;
     text-align: center;
@@ -61,7 +61,7 @@ input {
     padding: 1.5vh;
     border: 0.2vh solid #90E0EF; /* Light blue */
     border-radius: 1vh;
-    background-color: #ADE8F4; /* Soft blue */
+    background-color: white; /* Soft blue */
     color: #03045E; /* Dark navy for text */
     font-size: 2vh;
 }
