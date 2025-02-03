@@ -10,6 +10,13 @@ CREATE TABLE mcq (
     category VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE users (
+    user_id INT GENERATED ALWAYS AS IDENTITY,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(60) NOT NULL,
+    user_type VARCHAR(60) NOT NULL
+)
+
 
 INSERT INTO mcq 
 (question, option_a, option_b, option_c, option_d, correct_answer, difficulty_level, category) 
