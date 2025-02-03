@@ -22,7 +22,7 @@ class Mcq {
     }
 
     static async getOneById(id) {
-        const response = await db.query("SELECT * FROM questions WHERE question_id = $1;", [id])
+        const response = await db.query("SELECT * FROM mcq WHERE question_id = $1;", [id])
         if(response.rows.length != 1){
             throw new Error("Unable to locate Mcq")
         }
