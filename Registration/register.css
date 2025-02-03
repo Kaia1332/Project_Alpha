@@ -12,6 +12,7 @@ body {
 .container {
     background: white;
     padding: 50px;
+    padding-right: 70px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 320px;
@@ -20,20 +21,20 @@ body {
 
 h2 {
     color: #0077B6; /* Medium blue */
-    margin-bottom: 20px;
+    margin-bottom: 70px;
 }
 
 input {
     width: 100%;
     padding: 10px;
-    margin: 8px 0;
+    margin: 3px 0;
     border: 1px solid #90E0EF; /* Light blue */
     border-radius: 5px;
     background-color: #ADE8F4; /* Soft background blue */
     color: #03045E; /* Dark navy for text */
 }
 
-input:focus {
+input:focus { /* When clicking inside the forms*/
     outline: none;
     border-color: #0096C7; /* Slightly darker blue */
     background-color: #CAF0F8; /* Lightest blue */
@@ -42,6 +43,7 @@ input:focus {
 button {
     width: 100%;
     padding: 12px;
+    margin-top: 10px;
     background: #0077B6; /* Main blue */
     color: white;
     border: none;
@@ -57,4 +59,18 @@ button:hover {
 
 button:active {
     background: #03045E; /* Deep navy blue */
+}
+
+/*  Flex container padding*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between the form elemtents here */
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 50px; /* Adds space after each input */
 }
