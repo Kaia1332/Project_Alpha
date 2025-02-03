@@ -1,5 +1,9 @@
+DROP TABLE IF EXISTS mcq;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS user_responses;
+
 CREATE TABLE mcq (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    question_id INT GENERATED ALWAYS AS IDENTITY,
     question TEXT NOT NULL,
     option_a VARCHAR(255) NOT NULL,
     option_b VARCHAR(255) NOT NULL,
@@ -7,14 +11,27 @@ CREATE TABLE mcq (
     option_d VARCHAR(255) NOT NULL,
     correct_answer CHAR(1) NOT NULL,
     difficulty_level VARCHAR(20) NOT NULL,
-    category VARCHAR(50) NOT NULL
+    category VARCHAR(50) NOT NULL,
+    PRIMARY KEY (question_id)
 );
 
 CREATE TABLE users (
     user_id INT GENERATED ALWAYS AS IDENTITY,
     email VARCHAR(100) NOT NULL,
     password VARCHAR(60) NOT NULL,
-    user_type VARCHAR(60) NOT NULL
+    user_type VARCHAR(60) NOT NULL,
+    PRIMARY KEY (user_id)
+)
+
+CREATE TABLE user_responses (
+    response_id INT GENERATED ALWAYS AS IDENTITY,
+    user_id INT NOT NULL,
+    question_id INT NOT NULL,
+    answer_chosen CHAR(1) NOT NULL,
+    iscorrect BOOLEAN NOT NULL,
+    PRIMARY KEY (response_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (question_id) REFERENCES mcq(question_id)
 )
 
 
