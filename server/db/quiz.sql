@@ -1,6 +1,6 @@
+DROP TABLE IF EXISTS user_responses;
 DROP TABLE IF EXISTS mcq;
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS user_responses;
 
 CREATE TABLE mcq (
     question_id INT GENERATED ALWAYS AS IDENTITY,
@@ -25,10 +25,10 @@ CREATE TABLE users (
 
 CREATE TABLE user_responses (
     response_id INT GENERATED ALWAYS AS IDENTITY,
-    user_id INT NOT NULL,
+    user_id INT NOT NULL, --WHO IS DOING QUIZ --
     question_id INT NOT NULL,
     answer_chosen CHAR(1) NOT NULL,
-    iscorrect BOOLEAN NOT NULL,
+    iscorrect BOOLEAN NOT NULL, --CHECK ANSWER--
     PRIMARY KEY (response_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (question_id) REFERENCES mcq(question_id)
