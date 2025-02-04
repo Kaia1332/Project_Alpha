@@ -6,20 +6,32 @@ const User = require('../models/User');
 async function register(req, res) {
     try {
       const data = req.body;
-  
+      console.log('1. data req.body hit:', data); //1
       // Generate a salt with a specific cost
       const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUNDS));
   
-      // Hash the password
+      // // Hash the password
       data["password"] = await bcrypt.hash(data.password, salt);
-      // console.log(data)
+      
+      console.log('2. password hashed', data) //2
+      // Create new email person
       const result = await User.create(data);
-  
-      res.status(201).send(result);
+      
+      console.log("3. register result", result); //3
+
+      res.status(201).send(data);
     } catch (err) {
       res.status(400).json({ error: err.message });
     }
 }
+
+
+
+
+
+
+
+
 
 async function login(req, res) {
     const data = req.body;
