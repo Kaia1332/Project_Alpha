@@ -3,14 +3,14 @@ const db = require('../db/connect');
 class User {
 
     constructor({ user_id, email, password, user_type}) {
-        this.id = user_id;
+        this.user_id = user_id;
         this.email = email;
         this.password = password;
         this.user_type = user_type;
     }
 
     static async getOneById(id) {
-        const response = await db.query("SELECT * FROM users WHERE user_id = $1", [id]);
+        const response = await db.query("SELECT * FROM users WHERE user_id = $1;", [id]);
         if (response.rows.length != 1) {
             throw new Error("Unable to locate user.");
         }
