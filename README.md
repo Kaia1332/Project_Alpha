@@ -12,12 +12,12 @@ The application consists of:
 - 	Docker support to simplify deployment and ensure consistency across environments.
 
 ### Features
-	* 	Randomised geography quiz questions
-	* 	Multiple-choice answer options with correct/incorrect feedback
-	* 	User authentication for login and registration
-	* 	Tracks user responses and scores in the database
-	* 	API endpoints for retrieving questions and submitting answers
-	* 	Fully containerised setup using Docker and Docker Compose
+* 	Randomised geography quiz questions
+* 	Multiple-choice answer options with correct/incorrect feedback
+* 	User authentication for login and registration
+* 	Tracks user responses and scores in the database
+* 	API endpoints for retrieving questions and submitting answers
+* 	Fully containerised setup using Docker and Docker Compose
 
 
 ## Technologies Used
