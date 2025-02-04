@@ -1,4 +1,4 @@
-const Mcq = require("../models/mcq");
+const Mcq = require("../models/Mcq");
 
 async function index(req, res) {
   
