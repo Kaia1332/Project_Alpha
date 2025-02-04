@@ -12,14 +12,26 @@ async function register(req, res) {
   
       // // Hash the password
       data["password"] = await bcrypt.hash(data.password, salt);
+      
       console.log('2. password hashed', data) //2
+      // Create new email person
       const result = await User.create(data);
+      
       console.log("3. register result", result); //3
+
       res.status(201).send(data);
     } catch (err) {
       res.status(400).json({ error: err.message });
     }
 }
+
+
+
+
+
+
+
+
 
 async function login(req, res) {
     const data = req.body;
