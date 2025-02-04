@@ -17,7 +17,7 @@ CREATE TABLE mcq (
 
 CREATE TABLE users (
     user_id INT GENERATED ALWAYS AS IDENTITY,
-    username VARCHAR(100) NOT NULL,
+    email VARCHAR(60) NOT NULL,
     password VARCHAR(60) NOT NULL,
     user_type VARCHAR(60) NOT NULL,
     PRIMARY KEY (user_id)
