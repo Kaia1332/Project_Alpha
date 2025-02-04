@@ -1,12 +1,29 @@
-const API_URL = "http://localhost:3000/quiz"; // Your API base URL
+const API_URL = "http://localhost:3010/quiz"; // Your API base URL
 let currentQuestionId = 1; // Start with the first question
 let totalQuestions = 10; // Change this based on total questions available
+let questionsanswered = 0;
+let score = 0;
+let index=0
+
+function generateUniqueNumbers(count, max) {
+    const numbers = new Set();
+    while (numbers.size < count) {
+        let num = Math.floor(Math.random() * (max - 1)) + 1; // Ensures 1 to 24
+        numbers.add(num);
+    }
+    return Array.from(numbers);
+}
+
+const randomNumbers = generateUniqueNumbers(10, 25);
+console.log(randomNumbers);
+
+
 
 // Fetch a question by ID
 async function loadQuestionById(questionId) {
     try {
-        console.log(`Fetching question ID: ${questionId}`);
-        const response = await fetch(`${API_URL}/${questionId}`);
+        console.log(`Fetching question ID: ${randomNumbers[index]}`);
+        const response = await fetch(`${API_URL}/${randomNumbers[index]}`);
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -29,8 +46,7 @@ async function loadQuestionById(questionId) {
 // Display question
 function displayQuestion(questionData) {
     document.getElementById("question-text").textContent = questionData.question;
-    document.getElementById("question-difficulty").textContent = `Difficulty: ${questionData.difficulty_level}`;
-    document.getElementById("question-count").textContent = `Question ${currentQuestionId} of ${totalQuestions}`;
+    document.getElementById("question-count").textContent = `Question ${index+1} of ${totalQuestions}`;
 
     const optionsContainer = document.getElementById("options");
     optionsContainer.innerHTML = ""; // Clear previous options
@@ -48,11 +64,15 @@ function displayQuestion(questionData) {
 // Check if the selected answer is correct
 function checkAnswer(selected, correct) {
     const resultMessage = document.getElementById("result-message");
+    questionsanswered++;
 
     if (selected === correct) {
+        score++
         resultMessage.textContent = "Correct!";
         resultMessage.style.color = "green";
+        console.log(score);
     } else {
+        console.log(score);
         resultMessage.textContent = `Incorrect! The correct answer was ${correct}`;
         resultMessage.style.color = "red";
     }
@@ -65,9 +85,13 @@ function checkAnswer(selected, correct) {
 
 // Move to the next question
 function nextQuestion() {
-    currentQuestionId++;
-    if (currentQuestionId > totalQuestions) {
+    randomNumbers[index++];
+    if (questionsanswered === totalQuestions) {
+        const resultMessage = document.getElementById("result-message");
         document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
+        document.getElementById("question-container").innerHTML = `<h2>You Scored ${score} out of 10</h2>`;
+        resultMessage.textContent = ''
+        document.getElementById("question-count").textContent = '';
         document.getElementById("next-btn").style.display = "none";
     } else {
         document.getElementById("result-message").textContent = ""; // Clear feedback message
