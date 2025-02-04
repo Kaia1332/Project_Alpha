@@ -10,7 +10,16 @@ async function show(req, res) {
       res.status(404).json({ error: err.message });
     }
 }
-
-module.exports = {
-    show
+async function create(req, res) {
+    console.log('hit controller create');
+    try {
+      const data = req.body;
+      const newScore = await UserResponse.create(data);
+      res.status(201).json(newScore);
+    } catch (err) {
+      res.status(400).json({ error: err.message });
+    }
 }
+module.exports = {
+    show,
+    create}

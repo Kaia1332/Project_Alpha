@@ -8,4 +8,4 @@ userResponseRouter.post("/", userResponseController.create)
 userResponseRouter.get("/:id", userResponseController.show)
 
 
-module.exports = quizRouter
+module.exports = userResponseRouter
