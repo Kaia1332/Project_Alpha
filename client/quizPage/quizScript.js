@@ -3,7 +3,10 @@ let currentQuestionId = 1; // Start with the first question
 let totalQuestions = 10; // Change this based on total questions available
 let questionsanswered = 0;
 let score = 0;
-let index=0
+let index=0;
+const quizContainer = document.querySelector(".quiz-container");
+const optionsContainer = document.getElementById("options");
+let userID=0;
 
 function generateUniqueNumbers(count, max) {
     const numbers = new Set();
@@ -48,7 +51,7 @@ function displayQuestion(questionData) {
     document.getElementById("question-text").textContent = questionData.question;
     document.getElementById("question-count").textContent = `Question ${index+1} of ${totalQuestions}`;
 
-    const optionsContainer = document.getElementById("options");
+
     optionsContainer.innerHTML = ""; // Clear previous options
 
     ["A", "B", "C", "D"].forEach((option) => {
@@ -92,7 +95,10 @@ function nextQuestion() {
         document.getElementById("question-container").innerHTML = `<h2>You Scored ${score} out of 10</h2>`;
         resultMessage.textContent = ''
         document.getElementById("question-count").textContent = '';
-        document.getElementById("next-btn").style.display = "none";
+        document.querySelector("#next-btn").textContent = "Submit";
+        // Add event listener to the button
+        document.querySelector("#next-btn").addEventListener("click",postScore);
+
     } else {
         document.getElementById("result-message").textContent = ""; // Clear feedback message
         loadQuestionById(currentQuestionId);
@@ -103,3 +109,27 @@ function nextQuestion() {
 document.addEventListener("DOMContentLoaded", () => {
     loadQuestionById(currentQuestionId);
 });
+
+
+async function postScore(score) {
+    const options = {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: userID,
+            score: score
+        })
+    }
+
+    const response = await fetch("http://localhost:3000/users/register", options);
+    const data = await response.json();
+
+    if (response.status == 201) {
+        window.location.assign("login.html");
+    } else {
+        alert(data.error);
+    }
+}

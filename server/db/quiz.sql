@@ -25,14 +25,12 @@ CREATE TABLE users (
 
 CREATE TABLE user_responses (
     response_id INT GENERATED ALWAYS AS IDENTITY,
-    user_id INT NOT NULL, --WHO IS DOING QUIZ --
-    question_id INT NOT NULL,
-    answer_chosen CHAR(1) NOT NULL,
-    iscorrect BOOLEAN NOT NULL, --CHECK ANSWER--
+    user_id INT NOT NULL, -- WHO IS DOING QUIZ --
+    score INT NOT NULL,
     PRIMARY KEY (response_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (question_id) REFERENCES mcq(question_id)
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
 
 
 INSERT INTO mcq 
