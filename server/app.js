@@ -2,7 +2,6 @@ const express = require("express")
 const cors = require("cors")
 
 const logger = require("./middleware/logger")
-// const userRouter = require("./routers/users")
 const quizRouter = require("./routers/quiz")
 const userRouter = require('./routers/user');
 
@@ -20,6 +19,6 @@ app.get("/", (req, res) => {
   })
 
 app.use("/quiz", quizRouter)
-app.use("/user", userRouter)
+// app.use("/user", userRouter)
 
 module.exports = app
