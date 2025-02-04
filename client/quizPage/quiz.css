@@ -62,6 +62,19 @@ h2 {
     transition: background 0.3s ease;
 }
 
+.submit-btn {
+    display: none;
+    margin-top: 2vh;
+    padding: 2vh 4vh;
+    border: none;
+    border-radius: 1vh;
+    background: #0096C7; /* Bright blue */
+    color: white;
+    font-size: 2vh;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
 #next-btn:hover {
     background: #023E8A; /* Darker blue */
 }
