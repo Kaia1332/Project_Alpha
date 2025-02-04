@@ -1,5 +1,6 @@
 const Users = require('../../../models/User');
 const db = require('../../../db/connect');
+const { query } = require('express');
 
 describe('Users',()=>{
     beforeEach(() => jest.clearAllMocks());
@@ -16,6 +17,21 @@ describe('Users',()=>{
             expect(result.email).toBe('user@hotmail.com')
             expect(result.user_id).toBe(1);
             expect(db.query).toHaveBeenCalledWith('SELECT * FROM users WHERE user_id = $1;', [1])
+        })
+        it('should throw an Error when a User is not found', async ()=>{
+            jest.spyOn(db,'query').mockResolvedValueOnce({rows:[]})
+            await expect(Users.getOneById(999)).rejects.toThrow("Unable to locate user.")
+        })
+    })
+
+    describe('create',()=>{
+        it('resolves with an entry into users db', async ()=>{
+            const userData = { email:'user@user.com', password:'1234', user_type:'Admin' };
+            jest.spyOn(db, 'query').mockResolvedValueOnce({ rows: [{ ...userData, user_id: 1 }] });
+            const result = await Users.create(userData);
+            expect(result).toBeInstanceOf(Users);
+            expect(result).toHaveProperty('user_id',1);
+            expect(result).toHaveProperty('email','user@user.com')
         })
     })
 })
