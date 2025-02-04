@@ -26,8 +26,8 @@ async function show(req, res) {
 async function create(req, res) {
   try {
     const data = req.body;
-    const newDiary = await Diary.create(data);
-    res.status(201).json(newDiary);
+    const newMCQ = await Mcq.create(data);
+    res.status(201).json(newMCQ);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
@@ -58,7 +58,7 @@ async function destroy(req, res) {
 module.exports = {
   index,
   show,
-  // create,
+  create,
   // update,
   // destroy,
 };
