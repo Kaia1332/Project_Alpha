@@ -22,6 +22,7 @@ nav {
   justify-content: space-between;
   background-color: #023e8a;
   padding: 10px 20px;
+  height:50px;
 }
 nav ul {
   display: flex;
@@ -30,8 +31,8 @@ nav ul {
 }
 nav a {
   color: white;
+  display: block;
   text-decoration: none;
-  /* margin-left: 15px; */
 }
 
 nav a:hover {
