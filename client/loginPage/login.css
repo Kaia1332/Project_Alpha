@@ -1,3 +1,27 @@
+/* Navbar Styling */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: #0077B6;
+  padding: 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  font-size: 2vh;
+  text-decoration: none;
+  margin-left: 2vh;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #CAF0F8; /* Light blue */
+}
+
 body {
   background-color: #caf0f8;
   font-family: "Roboto", sans-serif;
