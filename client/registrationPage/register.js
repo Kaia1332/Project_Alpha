@@ -11,6 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const formData = new FormData(registerForm);
 
+        console.log("🚀 Raw FormData object:", formData);
+        console.log("📩 FormData Entries:", [...formData.entries()]); // Logs all key-value pairs
+        console.log("📌 Converted to JSON:", JSON.stringify(Object.fromEntries(formData.entries())));
+
+        if (![...formData.entries()].length) {
+            console.error("🚨 FormData is empty! Ensure input `name` attributes are correct.");
+            return;
+        }
+
         const userDetails = {
             email: formData.get("email"),
             password: formData.get("password"),
@@ -29,10 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch("http://localhost:3000/user/register", options);
             const data = await response.json();
+            console.log("🔄 Response Status:", response.status);
+            console.log("📬 Server Response:", data);
 
             if (response.ok) {
-                alert("Registration successful!");
-                window.location.assign("login.html"); // Redirect to login
+                // alert("Registration successful!");
+                console.log(data);
+                // window.location.assign("../loginPage/login.html"); // Redirect to login
             } else {
                 alert(data.error || "Registration failed. Please try again.");
             }

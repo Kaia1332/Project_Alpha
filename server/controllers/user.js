@@ -29,19 +29,42 @@ async function register(req, res) {
 
 
 
-
-
-
-
 async function login(req, res) {
+  //   console.log("hello form login");
+
+  //   const data = req.body;
+  // //  console.log("req body in login function is : " + data);
+  //   try {
+  //   const account = User.getOneByEmail(data.email);
+  //   if(!account) { throw new Error('No account with this email') }
+  //   // const match = await bcrypt.compare(data.password, account.password);
+
+  //   if (match) {
+  //     res.status(200).json({ success:true})
+  //   } else {
+  //         throw Error('User could not be authenticated') 
+  //   }
+
+  //     res.status(200).send(data);
+  //   } catch (err) {
+  //     res.status(401).json({ error: err.message });
+  //   }
+
+
+
     const data = req.body;
+
+    // console.log("login start function data is " + data.email);
+    // const email = User.getOneByEmail(data.email);
+    // console.log("email is " + email);
     try {
-      const user = await User.getOneByUsername(data.username);
-      if(!user) { throw new Error('No user with this username') }
-      const match = await bcrypt.compare(data.password, user.password);
+      const account = await User.getOneByEmail(data.email);
+
+      if(!account) { throw new Error('No account with this email') }
+      const match = await bcrypt.compare(data.password, account.password);
   
       if (match) {
-        const payload = { username: user.username }
+        const payload = { email: account.email }
         const sendToken = (err, token) => {
             if(err){ throw new Error('Error in token generation') }
             res.status(200).json({
