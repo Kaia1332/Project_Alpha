@@ -1,0 +1,96 @@
+/* Warm blue and white theme based on Coolors palette */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #CAF0F8; /* Lightest blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Quiz Container */
+.quiz-container {
+    width: 50vh;
+    padding: 5vh;
+    background: white;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    border-radius: 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Question Styling */
+h2 {
+    color: #0077B6; /* Medium blue */
+    font-size: 3vh;
+    margin-bottom: 3vh;
+}
+
+/* Options Styling */
+#options button {
+    display: block;
+    width: 100%;
+    margin: 1vh 0;
+    padding: 2vh;
+    border: none;
+    border-radius: 1vh;
+    background: #0077B6; /* Primary blue */
+    color: white;
+    font-size: 2vh;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#options button:hover {
+    background: #023E8A; /* Darker blue */
+}
+
+/* Next Button */
+#next-btn {
+    display: none;
+    margin-top: 2vh;
+    padding: 2vh 4vh;
+    border: none;
+    border-radius: 1vh;
+    background: #0096C7; /* Bright blue */
+    color: white;
+    font-size: 2vh;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn {
+    display: none;
+    margin-top: 2vh;
+    padding: 2vh 4vh;
+    border: none;
+    border-radius: 1vh;
+    background: #0096C7; /* Bright blue */
+    color: white;
+    font-size: 2vh;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#next-btn:hover {
+    background: #023E8A; /* Darker blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quiz-container {
+        width: 80%;
+        padding: 4vh;
+    }
+
+    #options button {
+        font-size: 1.8vh;
+    }
+
+    #next-btn {
+        font-size: 1.8vh;
+    }
+}

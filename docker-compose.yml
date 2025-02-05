@@ -3,7 +3,7 @@ services:
   quiz-mvc:
     image: ismailp97/quiz-mvc:0.0.1.RELEASE
     ports:
-      - "3000:3000"
+      - "3010:3010"
     restart: always
     depends_on:
       - quiz-db

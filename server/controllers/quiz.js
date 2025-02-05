@@ -5,7 +5,7 @@ async function index(req, res) {
   try {
     // console.log("hello from index controller");
     const diaries = await Mcq.getAll();
-    console.log(diaries);
+    // console.log(diaries);
     res.status(200).json(diaries)
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -15,7 +15,7 @@ async function index(req, res) {
 async function show(req, res) {
   try {
     const id = req.params.id;
-    console.log("here is value of id in show controller: " + id)
+    // console.log("here is value of id in show controller: " + id)
     const diaries = await Mcq.getOneById(id);
     res.status(200).json(diaries);
   } catch (err) {
@@ -26,8 +26,8 @@ async function show(req, res) {
 async function create(req, res) {
   try {
     const data = req.body;
-    const newDiary = await Diary.create(data);
-    res.status(201).json(newDiary);
+    const newMCQ = await Mcq.create(data);
+    res.status(201).json(newMCQ);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
@@ -58,7 +58,7 @@ async function destroy(req, res) {
 module.exports = {
   index,
   show,
-  // create,
+  create,
   // update,
   // destroy,
 };

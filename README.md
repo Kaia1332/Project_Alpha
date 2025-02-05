@@ -38,10 +38,12 @@ cd <repo-name>/server
 ```
 
 
-## Set Up Environment Variables
-Create a .env file in the server folder directory and add:
+## Update username in docker-compose.yml file
+Update your docker username for mvc and db:
 ```
-PORT=3000
+image: YOUR_USERNAME/quiz-mvc:0.0.1.RELEASE
+
+image: ismailp97/quiz-db:0.0.1.RELEASE
 ```
 
 ## Docker
@@ -71,7 +73,7 @@ Ensure docker in running and from root directory where docker-compose.yml is, ru
 docker-compose up -d
 ```
 
-The API should now be accessible on http://localhost:3000/
+The API should now be accessible on http://localhost:3010/
 
 ## Access application
 In VS code using live server extension, run the index.html in live server.

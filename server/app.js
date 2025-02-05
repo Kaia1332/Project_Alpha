@@ -4,10 +4,12 @@ const cors = require("cors")
 const logger = require("./middleware/logger")
 const quizRouter = require("./routers/quiz")
 const userRouter = require('./routers/user');
+const userResponseRouter = require("./routers/user_response")
 
 const app = express()
-app.use(express.json())
+
 app.use(cors())
+app.use(express.json())
 app.use(logger)
 
 // landing page
@@ -19,6 +21,7 @@ app.get("/", (req, res) => {
   })
 
 app.use("/quiz", quizRouter)
-// app.use("/user", userRouter)
+app.use("/user", userRouter)
+app.use("/user_response",userResponseRouter)
 
 module.exports = app

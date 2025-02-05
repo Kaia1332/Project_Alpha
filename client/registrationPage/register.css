@@ -1,0 +1,97 @@
+/* Warm blue and white theme based on Coolors palette */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #CAF0F8; /* Lightest blue */
+    margin: 0;
+}
+
+/* Centered container with uniform padding */
+.container {
+    background: white;
+    padding: 10vh; /* Adjusted for uniform padding */
+    border-radius: 4vh;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    width: 40vh; /* Responsive width */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures child elements stay centered */
+}
+
+/* Header styling */
+h2 {
+    color: #0077B6; /* Medium blue */
+    margin-bottom: 3vh; /* Adjusted for better spacing */
+    font-size: 4vh; /* Responsive font size */
+}
+
+/* Form styling */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh; /* Spacing between form elements */
+    align-items: center;
+}
+
+/* Label styling */
+label {
+    align-self: flex-start; /* Aligns labels to the left */
+    font-weight: bold;
+    margin-top: 3vh;
+    color: #023E8A;
+}
+
+/* specific last User Type label */
+.user-type-label {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Input styling */
+input {
+    width: 100%;
+    padding: 1.5vh;
+    border: 0.2vh solid #90E0EF; /* Light blue */
+    border-radius: 1vh;
+    background-color: white; /* Soft blue */
+    color: #03045E; /* Dark navy for text */
+    font-size: 2vh;
+}
+
+/* Input focus effect */
+input:focus {
+    outline: none;
+    border-color: #0096C7; /* Darker blue */
+    background-color: #CAF0F8; /* Lightest blue */
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    margin-top: 2.5vh;
+    padding: 2vh;
+    background: #0077B6; /* Main blue */
+    color: white;
+    border: none;
+    border-radius: 1.5vh;
+    cursor: pointer;
+    font-size: 2.2vh;
+    transition: background 0.3s ease;
+}
+
+/* Button hover and active states */
+button:hover {
+    background: #023E8A; /* Darker blue */
+}
+
+button:active {
+    background: #03045E; /* Deep navy blue */
+}
