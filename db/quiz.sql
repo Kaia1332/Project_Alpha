@@ -27,6 +27,7 @@ CREATE TABLE user_responses (
     response_id INT GENERATED ALWAYS AS IDENTITY,
     user_id INT NOT NULL, -- WHO IS DOING QUIZ --
     score INT NOT NULL,
+    incorrect_categories TEXT[],
     PRIMARY KEY (response_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );

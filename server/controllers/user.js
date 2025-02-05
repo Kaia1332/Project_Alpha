@@ -36,12 +36,14 @@ async function login(req, res) {
       const match = await bcrypt.compare(data.password, account.password);
   
       if (match) {
-        const payload = { email: account.email }
+        const payload = { user_id: account.user_id, email: account.email }
         const sendToken = (err, token) => {
             if(err){ throw new Error('Error in token generation') }
             res.status(200).json({
                 success: true,
                 token: token,
+                user_id: account.user_id,
+                email: account.email
             });
         }
 

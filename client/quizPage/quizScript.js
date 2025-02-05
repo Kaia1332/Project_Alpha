@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/quiz";
+const API_URL = "http://localhost:3000/quiz"; // Your API base URL
 let currentQuestionId = 1; // Start with the first question
 let totalQuestions = 10; // Change this based on total questions available
 let questionsanswered = 0;
@@ -6,7 +6,7 @@ let score = 0;
 let index=0;
 const quizContainer = document.querySelector(".quiz-container");
 const optionsContainer = document.getElementById("options");
-let userID=0;
+let userID= localStorage.getItem("userId");
 let incorrectCategories = [];
 
 function generateUniqueNumbers(count, max) {
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-async function postScore(score) {
+async function postScore() {
     const options = {
         method: "POST",
         headers: {
@@ -138,15 +138,16 @@ async function postScore(score) {
         },
         body: JSON.stringify({
             user_id: userID,
-            score: score
+            score: score,
+            incorrect_categories: incorrectCategories
         })
     }
 
-    const response = await fetch("http://localhost:3000/users/register", options);
+    const response = await fetch("http://localhost:3011/user_response", options);
     const data = await response.json();
 
     if (response.status == 201) {
-        window.location.assign("login.html");
+        window.location.assign("../homePage/home.html");
     } else {
         alert(data.error);
     }
