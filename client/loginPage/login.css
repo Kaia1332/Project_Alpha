@@ -30,36 +30,51 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  background-image: url(../../Instructions/Assets/background.png);
+  background-size: contain; 
+  background-position: center; 
+  background-repeat: no-repeat
 }
 .login-form {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+ 
+  padding: 10vh; /* Adjusted for uniform padding */
+    border-radius: 4vh;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    width: 40vh; /* Responsive width */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures child elements stay centered */
+    background:rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
 }
 .login-form h2 {
   text-align: center;
-  color: #03045e;
-  margin-bottom: 20px;
+  color:  #0077B6;
+  margin-bottom: 3vh; 
+  font-size: 4vh
 }
+
 .login-form .form-group {
   margin-bottom: 15px;
 }
-.login-form .form-group label {
+/* .login-form .form-group */
+
+label {
   display: block;
   margin-bottom: 5px;
   color: #023e8a;
-}
-.login-form .form-group input {
+  width: 100%;
+} 
+
+/* .login-form .form-group input {
   width: 100%;
   padding: 10px;
   border: 1px solid #0077b6;
   border-radius: 4px;
   color: #03045e;
   box-sizing: border-box;
-}
+} */
 .login-form .form-group input:focus {
   border-color: #0096c7;
   outline: none;
@@ -79,15 +94,24 @@ body {
 }
 .login-form button {
   width: 100%;
-  padding: 10px;
-  background-color: #0077b6;
+  margin-top: 2.5vh;
+  padding: 2vh;
+  background: #0077B6; /* Main blue */
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 1.5vh;
   cursor: pointer;
+  font-size: 2.2vh;
 }
+
+
+.login-form button:active {
+  background: #03045E; 
+}
+
+
 .login-form button:hover {
-  background-color: #0096c7;
+  background: #023E8A; 
 }
 .login-form .text-center {
   text-align: center;
@@ -99,4 +123,42 @@ body {
 }
 .login-form .text-center a:hover {
   text-decoration: underline;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px; 
+  width: 100%;
+}
+
+.form-group i {
+  font-size: 20px; 
+  margin-right: 10px;
+  
+}
+
+.form-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  padding: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 1.5vh;
+  border: 0.2vh solid #90E0EF; /* Light blue */
+  border-radius: 1vh;
+  background-color: white; /* Soft blue */
+  color: #03045E; /* Dark navy for text */
+  font-size: 2vh;
+}
+
+/* Input focus effect */
+input:focus {
+  outline: none;
+  border-color: #0096C7; /* Darker blue */
+  background-color: #CAF0F8; /* Lightest blue */
 }

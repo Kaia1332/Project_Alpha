@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startGameButton.addEventListener("click", () => {
         
         window.location.assign("../quizPage/quiz.html");
+        window.location.assign("../quizPage/quiz.html");
     });
 });
 

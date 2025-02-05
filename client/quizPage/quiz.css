@@ -51,27 +51,47 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-image: url(../../Instructions/Assets/background.png);
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat
 }
+ 
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color:#023e8a;
+    padding: 10px 20px;
+}
+
+
 
 /* Quiz Container */
 .quiz-container {
-    width: 50vh;
+    background:rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
     padding: 5vh;
-    background: white;
+    border-radius: 2vh;
     box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
-    border-radius: 4vh;
+    width: 50vh;
+    max-width: 600px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+ 
 /* Question Styling */
 h2 {
     color: #0077B6; /* Medium blue */
     font-size: 3vh;
     margin-bottom: 3vh;
 }
-
+ 
 /* Options Styling */
 #options button {
     display: block;
@@ -86,11 +106,11 @@ h2 {
     cursor: pointer;
     transition: background 0.3s ease;
 }
-
+ 
 #options button:hover {
     background: #023E8A; /* Darker blue */
 }
-
+ 
 /* Next Button */
 #next-btn {
     display: none;
@@ -104,7 +124,7 @@ h2 {
     cursor: pointer;
     transition: background 0.3s ease;
 }
-
+ 
 .submit-btn {
     display: none;
     margin-top: 2vh;
@@ -117,22 +137,22 @@ h2 {
     cursor: pointer;
     transition: background 0.3s ease;
 }
-
+ 
 #next-btn:hover {
     background: #023E8A; /* Darker blue */
 }
-
+ 
 /* Responsive Design */
 @media (max-width: 768px) {
     .quiz-container {
         width: 80%;
         padding: 4vh;
     }
-
+ 
     #options button {
         font-size: 1.8vh;
     }
-
+ 
     #next-btn {
         font-size: 1.8vh;
     }
