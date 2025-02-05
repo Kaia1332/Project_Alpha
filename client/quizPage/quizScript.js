@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3010/quiz"; // Your API base URL
+const API_URL = "http://localhost:3000/quiz"; // Your API base URL
 let currentQuestionId = 1; // Start with the first question
 let totalQuestions = 10; // Change this based on total questions available
 let questionsanswered = 0;
@@ -26,11 +26,14 @@ console.log(randomNumbers);
 async function loadQuestionById(questionId) {
     try {
         console.log(`Fetching question ID: ${randomNumbers[index]}`);
-        const response = await fetch(`${API_URL}/${randomNumbers[index]}`);
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+        const options = {
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
+          };
+
+        const response = await fetch(`${API_URL}/${randomNumbers[index]}`, options);
 
         const data = await response.json();
         console.log("Received question:", data);
@@ -41,6 +44,13 @@ async function loadQuestionById(questionId) {
             document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
             document.getElementById("next-btn").style.display = "none";
         }
+
+        // if (!response.ok) {
+        //     throw new Error(`HTTP error! Status: ${response.status}`);
+        // } else {
+
+        // }
+
     } catch (error) {
         console.error("Error fetching quiz data:", error);
     }

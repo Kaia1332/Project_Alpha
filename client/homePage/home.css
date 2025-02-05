@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #caf0f8;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:;
+    background-color:#023e8a;
+    padding: 10px 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+.user-id {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.container {
+    background: white;
+    padding: 5vh;
+    border-radius: 2vh;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 80px; /* Adjusted for fixed nav */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+
+/* .card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.card h2 {
+    margin-top: 0;
+} */
+
+.text-input {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: #023e8a;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+.start-button {
+    margin: 20px 0;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #0077B6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #005f8a;
+    transform: translateY(-2px);
+}
+article{
+    text-align: left;
+    
+}
+h1{
+    text-align: center;
+    color:#023e8a
+}

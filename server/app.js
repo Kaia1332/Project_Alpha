@@ -7,8 +7,9 @@ const userRouter = require('./routers/user');
 const userResponseRouter = require("./routers/user_response")
 
 const app = express()
-app.use(express.json())
+
 app.use(cors())
+app.use(express.json())
 app.use(logger)
 
 // landing page
