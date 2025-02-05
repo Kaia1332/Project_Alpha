@@ -16,6 +16,16 @@ class UserResponse {
         return new UserResponse(response.rows[0]);
     }
 
+    static async getAll() {
+        const response = await db.query(
+            `SELECT ur.response_id, ur.user_id, u.email, ur.score, ur.incorrect_categories
+             FROM user_responses ur
+             LEFT JOIN users u ON ur.user_id = u.user_id;`
+        );
+    
+        return response.rows.map(row => new UserResponse(row));
+    }
+
     static async create(data) {
         console.log('hit user_res_controller');
         const { user_id, score, incorrect_categories } = data;
