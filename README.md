@@ -73,7 +73,7 @@ Ensure docker in running and from root directory where docker-compose.yml is, ru
 docker-compose up -d
 ```
 
-The API should now be accessible on http://localhost:3000/
+The API should now be accessible on http://localhost:3010/
 
 ## Access application
 In VS code using live server extension, run the index.html in live server.
