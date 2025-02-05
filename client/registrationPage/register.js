@@ -8,9 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     registerForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        console.log(e);
 
         const formData = new FormData(registerForm);
-
+        
         const userDetails = {
             email: formData.get("email"),
             password: formData.get("password"),
