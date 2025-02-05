@@ -3,11 +3,16 @@
     position: absolute;
     top: 0;
     width: 100%;
-    background: #0077B6;
     padding: 2vh;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: center; */
     align-items: center;
+}
+
+.navbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-link {
@@ -15,7 +20,7 @@
     font-size: 2vh;
     text-decoration: none;
     margin-left: 2vh;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .nav-link:hover {

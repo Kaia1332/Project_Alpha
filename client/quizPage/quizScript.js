@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3012/quiz"; // Your API base URL
+const API_URL = "http://localhost:3000/quiz"; // Your API base URL
 let currentQuestionId = 1; // Start with the first question
 let totalQuestions = 10; // Change this based on total questions available
 let questionsanswered = 0;
@@ -144,7 +144,7 @@ async function postScore() {
         })
     }
 
-    const response = await fetch("http://localhost:3012/user_response", options);
+    const response = await fetch("http://localhost:3000/user_response", options);
     const data = await response.json();
 
     if (response.status == 201) {
@@ -157,5 +157,7 @@ async function postScore() {
 function logout() {
     console.log("Logging out...");
     localStorage.removeItem("token"); // Clear authentication token
+    localStorage.removeItem("email")
+    localStorage.removeItem("user_id")
     window.location.href = "../loginPage/login.html"; // Redirect to login page
 }

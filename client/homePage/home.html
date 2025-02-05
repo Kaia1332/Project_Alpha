@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,43 +10,59 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Doto:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="home.css" />
     <script src="home.js" defer></script>
 
     <title>Home Page</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- <nav>
+      <div class="user-id">Hello, ${user_id}</div>
+      <ul>
+        <a href="#">Home</a>
+        <a id="quiz-link">Quiz</a>
+        <a href="../feedbackPage/feedback.html">Feedback</a>
+      </ul>
+    </nav> -->
+
     <nav>
+      <ul class="nav-links">
+        <a href="#">Home</a>
+        <a id="quiz-link">Quiz</a>
+        <a href="../feedbackPage/feedback.html">Feedback</a>
+      </ul>
+      <div class="user-actions">
         <div class="user-id">Hello, ${user_id}</div>
-        <ul>
-            <a href="#">Home</a>
-            <a id="quiz-link">Quiz</a>
-            <a href="../feedbackPage/feedback.html">Result</a>
-        </ul>
-
-
-
+        <button id="logout-btn" onclick="logout()">Log Out</button>
+      </div>
     </nav>
-<h1>Welcome to GeoQuest</h1>
+
+    <h1>Welcome to GeoQuest</h1>
     <div class="container">
-        <div>
-            <h2>What's GeoQuest</h2>
-            <article>
-                Are you ready to embark on an exciting journey around the globe? GeoQuest is here to make learning geography fun, engaging, and interactive for UK Key Stage 3 students! Dive into a world of physical and human geography as you tackle single-answer quizzes designed to spark your curiosity and test your knowledge.
+      <div>
+        <h2>What's GeoQuest</h2>
+        <article>
+          Are you ready to embark on an exciting journey around the globe?
+          GeoQuest is here to make learning geography fun, engaging, and
+          interactive for UK Key Stage 3 students! Dive into a world of physical
+          and human geography as you tackle single-answer quizzes designed to
+          spark your curiosity and test your knowledge. Whether you're exploring
+          towering mountain ranges, bustling cities, or the fascinating
+          connections between people and the planet, GeoQuest turns learning
+          into an adventure. With every question, you'll discover new facts,
+          sharpen your geography skills, and have a blast along the way. So,
+          grab your virtual passport and get ready to explore—your geography
+          journey starts here! 🌍✨
+        </article>
+      </div>
 
-                Whether you're exploring towering mountain ranges, bustling cities, or the fascinating connections between people and the planet, GeoQuest turns learning into an adventure. With every question, you'll discover new facts, sharpen your geography skills, and have a blast along the way.
-
-                So, grab your virtual passport and get ready to explore—your geography journey starts here! 🌍✨
-            </article>
-        </div>
-        
-        
-
-        <button class="start-button">Start the Quiz!</button>
+      <button class="start-button">Start the Quiz!</button>
     </div>
 
-    <footer>
-        &copy; MIKEN
-    </footer>
-</body>
+    <footer>&copy; MIKEN</footer>
+  </body>
 </html>

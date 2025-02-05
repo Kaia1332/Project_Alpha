@@ -8,19 +8,21 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="../homePage/home.html" class="nav-link">Home</a>
+        <div class="navbar-center">
+            <a href="../homePage/home.html" class="nav-link">Home</a>
+        </div>
         <button id="logout-btn" onclick="logout()">Log Out</button>
     </nav>
     
     <div class="quiz-container">
         <h1>Geography Quiz</h1>
-        <p id="question-count">Question 1</p> <!-- Shows current question count -->
-        <p id="question-difficulty"></p> <!-- Shows difficulty level -->
+        <p id="question-count">Question 1</p>
+        <p id="question-difficulty"></p>
         <div id="question-container">
             <p id="question-text"></p>
             <div id="options"></div>
         </div>
-        <p id="result-message"></p> <!-- Shows correct/incorrect feedback -->
+        <p id="result-message"></p>
         <button id="next-btn" onclick="nextQuestion()" style="display:none;">Next Question</button>
     </div>
 

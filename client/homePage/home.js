@@ -28,3 +28,11 @@ function userLoggedIn() {
       window.location.assign("../loginPage/login.html"); // Redirect to login
     }
 }
+
+function logout() {
+  console.log("Logging out...");
+  localStorage.removeItem("token"); // Clear authentication token
+  localStorage.removeItem("email")
+  localStorage.removeItem("user_id")
+  window.location.href = "home.html"; // Redirect to login page
+}
