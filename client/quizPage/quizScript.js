@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/quiz"; // Your API base URL
+const API_URL = "http://localhost:3000/quiz";
 let currentQuestionId = 1; // Start with the first question
 let totalQuestions = 10; // Change this based on total questions available
 let questionsanswered = 0;
@@ -22,7 +22,6 @@ const randomNumbers = generateUniqueNumbers(10, 25);
 console.log(randomNumbers);
 
 
-
 // Fetch a question by ID
 async function loadQuestionById(questionId) {
     try {
@@ -36,21 +35,19 @@ async function loadQuestionById(questionId) {
 
         const response = await fetch(`${API_URL}/${randomNumbers[index]}`, options);
 
-        const data = await response.json();
-        console.log("Received question:", data);
-
-        if (data.question_id) {
-            displayQuestion(data);
+        if (response.status == 200) {
+            const data = await response.json();
+            console.log("Received question:", data);
+            console.log(response);
+            if (data.question_id) {
+                displayQuestion(data);
+            } else {
+                document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
+                document.getElementById("next-btn").style.display = "none";
+            }
         } else {
-            document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
-            document.getElementById("next-btn").style.display = "none";
+            window.location.assign("../loginPage/login.html");
         }
-
-        // if (!response.ok) {
-        //     throw new Error(`HTTP error! Status: ${response.status}`);
-        // } else {
-
-        // }
 
     } catch (error) {
         console.error("Error fetching quiz data:", error);
@@ -153,4 +150,10 @@ async function postScore(score) {
     } else {
         alert(data.error);
     }
+}
+
+function logout() {
+    console.log("Logging out...");
+    localStorage.removeItem("token"); // Clear authentication token
+    window.location.href = "../loginPage/login.html"; // Redirect to login page
 }

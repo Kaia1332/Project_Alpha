@@ -1,3 +1,46 @@
+/* Navbar Styling */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #0077B6;
+    padding: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    font-size: 2vh;
+    text-decoration: none;
+    margin-left: 2vh;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #CAF0F8; /* Light blue */
+}
+
+/* Logout Button */
+#logout-btn {
+    background: #FF5733; /* Red logout button */
+    color: white;
+    border: none;
+    padding: 1.5vh 3vh;
+    border-radius: 1vh;
+    font-size: 2vh;
+    cursor: pointer;
+    margin-right: 2vh;
+}
+
+#logout-btn:hover {
+    background: #C70039; /* Darker red */
+}
+
+
+
+
 /* Warm blue and white theme based on Coolors palette */
 body {
     font-family: Arial, sans-serif;
