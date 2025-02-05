@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3010/quiz"; // Your API base URL
+const API_URL = "http://localhost:3001/quiz"; // Your API base URL
 let currentQuestionId = 1; // Start with the first question
 let totalQuestions = 10; // Change this based on total questions available
 let questionsanswered = 0;

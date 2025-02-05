@@ -37,6 +37,15 @@ git clone <repo-name>
 cd <repo-name>/server
 ```
 
+
+## Update username in docker-compose.yml file
+Update your docker username for mvc and db:
+```
+image: YOUR_USERNAME/quiz-mvc:0.0.1.RELEASE
+
+image: ismailp97/quiz-db:0.0.1.RELEASE
+```
+
 ## Docker
 
 ### 1. Build the Docker Images
