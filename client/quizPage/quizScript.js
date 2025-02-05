@@ -36,7 +36,7 @@ async function loadQuestionById(questionId) {
         console.log("Received question:", data);
 
         if (data.question_id) {
-            displayQuestion(data.question_id);
+            displayQuestion(data);
         } else {
             document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
             document.getElementById("next-btn").style.display = "none";

@@ -1,9 +1,9 @@
 version: '3.9'
 services:
   quiz-mvc:
-    image: ismailp97/quiz-mvc:0.0.1.RELEASE
+    image: erikrasniqi/quiz-mvc:0.0.1.RELEASE
     ports:
-      - "3000:3000"
+      - "3010:3010"
     restart: always
     depends_on:
       - quiz-db
@@ -12,7 +12,7 @@ services:
 
   # The value of 'DB_HOST' we reference in the MVC Dockerfile  
   quiz-db:
-    image: ismailp97/quiz-db:0.0.1.RELEASE
+    image: erikrasniqi/quiz-db:0.0.1.RELEASE
     ports:
       - "5432:5432"
     restart: always
