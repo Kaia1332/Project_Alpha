@@ -65,8 +65,10 @@ async function login(req, res) {
   
       if (match) {
         const payload = { email: account.email }
+        console.log('payload hit', payload); //OK
+        
         const sendToken = (err, token) => {
-            if(err){ throw new Error('Error in token generation') }
+            if(err){ throw new Error('Error in token generation') } //Error current
             res.status(200).json({
                 success: true,
                 token: token,
