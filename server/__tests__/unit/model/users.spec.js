@@ -24,14 +24,22 @@ describe('Users',()=>{
         })
     })
 
-    describe('create',()=>{
-        it('resolves with an entry into users db', async ()=>{
-            const userData = { email:'user@user.com', password:'1234', user_type:'Admin' };
-            jest.spyOn(db, 'query').mockResolvedValueOnce({ rows: [{ ...userData, user_id: 1 }] });
+    describe('create', () => {
+        it('resolves with an entry into users db', async () => {
+            const userData = { email: 'user@user.com', password: '1234', user_type: 'Admin' };
+    
+            jest.spyOn(db, 'query').mockResolvedValueOnce({ rows: [{ user_id: 1 }] });
+    
+            const mockUser = new Users({ ...userData, user_id: 1 });
+            jest.spyOn(Users, 'getOneById').mockResolvedValueOnce(mockUser);
+    
             const result = await Users.create(userData);
-            expect(result).toBeInstanceOf(Users);
-            expect(result).toHaveProperty('user_id',1);
-            expect(result).toHaveProperty('email','user@user.com')
-        })
-    })
+    
+            expect(result).toBeInstanceOf(Users); 
+            expect(result).toHaveProperty('user_id', 1);
+            expect(result).toHaveProperty('email', 'user@user.com');
+        });
+    });
+    
+    
 })
