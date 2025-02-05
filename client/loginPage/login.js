@@ -30,7 +30,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         localStorage.setItem("email",data.email)
         localStorage.setItem("userId", data.user_id);
         // send user to quiz page
-        window.location.assign("../homePage/home.html");
+        window.location.assign("../quizPage/quiz.html");
       } else {
         alert(data.error);
       }

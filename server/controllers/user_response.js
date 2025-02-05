@@ -1,6 +1,6 @@
 const UserResponse = require("../models/UserResponse");
 
-async function index() {
+async function index(req, res) {
   try {
     const responses = await UserResponse.getAll();
     res.status(200).json(responses);
