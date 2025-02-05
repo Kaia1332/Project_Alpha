@@ -7,6 +7,7 @@ let index=0;
 const quizContainer = document.querySelector(".quiz-container");
 const optionsContainer = document.getElementById("options");
 let userID=0;
+let incorrectCategories = [];
 
 function generateUniqueNumbers(count, max) {
     const numbers = new Set();
@@ -67,7 +68,7 @@ function displayQuestion(questionData) {
     ["A", "B", "C", "D"].forEach((option) => {
         const btn = document.createElement("button");
         btn.textContent = `${option}: ${questionData[`option_${option.toLowerCase()}`]}`; // Add A, B, C, D
-        btn.onclick = () => checkAnswer(option, questionData.correct_answer);
+        btn.onclick = () => checkAnswer(option, questionData.correct_answer, questionData.category);
         optionsContainer.appendChild(btn);
     });
 
@@ -75,7 +76,7 @@ function displayQuestion(questionData) {
 }
 
 // Check if the selected answer is correct
-function checkAnswer(selected, correct) {
+function checkAnswer(selected, correct,category) {
     const resultMessage = document.getElementById("result-message");
     questionsanswered++;
 
@@ -88,6 +89,7 @@ function checkAnswer(selected, correct) {
         console.log(score);
         resultMessage.textContent = `Incorrect! The correct answer was ${correct}`;
         resultMessage.style.color = "red";
+        incorrectCategories.push(category);
     }
 
     // Disable buttons after answer is selected
@@ -103,14 +105,23 @@ function nextQuestion() {
         const resultMessage = document.getElementById("result-message");
         document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
         document.getElementById("question-container").innerHTML = `<h2>You Scored ${score} out of 10</h2>`;
+
+        const uniqueIncorrectCategories = [...new Set(incorrectCategories)];
+        if(uniqueIncorrectCategories.length>0){
+            document.getElementById("question-container").innerHTML += `
+                <div class="catsStruggled">
+                    <h2>Categories you struggled with:</h2>
+                    <ul>${uniqueIncorrectCategories.map(category => `<li>${category}</li>`).join('')}</ul>
+                </div>`;
+        }
+
         resultMessage.textContent = ''
         document.getElementById("question-count").textContent = '';
         document.querySelector("#next-btn").textContent = "Submit";
-        // Add event listener to the button
         document.querySelector("#next-btn").addEventListener("click",postScore);
 
     } else {
-        document.getElementById("result-message").textContent = ""; // Clear feedback message
+        document.getElementById("result-message").textContent = ""; 
         loadQuestionById(currentQuestionId);
     }
 }
