@@ -37,13 +37,6 @@ git clone <repo-name>
 cd <repo-name>/server
 ```
 
-
-## Set Up Environment Variables
-Create a .env file in the server folder directory and add:
-```
-PORT=3000
-```
-
 ## Docker
 
 ### 1. Build the Docker Images
