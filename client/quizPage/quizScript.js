@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/quiz"; // Your API base URL
+const API_URL = "http://localhost:3012/quiz"; // Your API base URL
 let currentQuestionId = 1; // Start with the first question
 let totalQuestions = 10; // Change this based on total questions available
 let questionsanswered = 0;
@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function postScore() {
+    let newArr=[...new Set(incorrectCategories)]
     const options = {
         method: "POST",
         headers: {
@@ -139,11 +140,11 @@ async function postScore() {
         body: JSON.stringify({
             user_id: userID,
             score: score,
-            incorrect_categories: incorrectCategories
+            incorrect_categories: newArr
         })
     }
 
-    const response = await fetch("http://localhost:3011/user_response", options);
+    const response = await fetch("http://localhost:3012/user_response", options);
     const data = await response.json();
 
     if (response.status == 201) {
