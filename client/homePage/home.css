@@ -97,7 +97,7 @@ nav a:hover {
   width: 80%;
   max-width: 600px;
   text-align: center;
-  
+  margin-top:50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,7 +160,7 @@ article {
 
 h1 {
   font-family: "Doto", serif;
-  
+  margin-top:50px;
   margin-bottom: 0px;
   text-align: center;
   color: #023e8a;
