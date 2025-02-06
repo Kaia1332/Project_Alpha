@@ -1,7 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const userId = localStorage.getItem("email") || "Guest";
-  console.log(userId);
-  document.querySelector(".user-id").textContent = `Welcome ${userId}`;
+  // const userId = localStorage.getItem("email") || "Guest";
+  // document.querySelector(".user-id").textContent = `Welcome ${userId}`;
+
+  const userEmail = localStorage.getItem("email");
+  const usernameDisplay = document.querySelector("#username");
+  const authButton = document.querySelector("#auth-btn");
+
+  if (userEmail) {
+    usernameDisplay.textContent = userEmail;
+    authButton.textContent = "Log Out";
+
+    authButton.removeEventListener("click", logout); 
+    authButton.addEventListener("click", logout); 
+  } else {
+    usernameDisplay.textContent = "Guest";
+    authButton.textContent = "Log In";
+
+    authButton.removeEventListener("click", loginRedirect); 
+    authButton.addEventListener("click", loginRedirect); 
+  }
 
   const startGameButton = document.querySelector(".start-button");
   const quizLink = document.getElementById("quiz-link");
@@ -15,6 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+function loginRedirect() {
+  window.location.href = "../loginPage/login.html"; // Redirect to login page
+}
 
 function userLoggedIn() {
     const token = localStorage.getItem("token"); // Get the authentication token

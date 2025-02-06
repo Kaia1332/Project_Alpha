@@ -8,6 +8,7 @@ const quizContainer = document.querySelector(".quiz-container");
 const optionsContainer = document.getElementById("options");
 let userID= localStorage.getItem("userId");
 let incorrectCategories = [];
+const userName = localStorage.getItem("email") || "Guest";
 
 function generateUniqueNumbers(count, max) {
     const numbers = new Set();
@@ -125,9 +126,31 @@ function nextQuestion() {
 
 // Load the first question on page load
 document.addEventListener("DOMContentLoaded", () => {
+    // document.querySelector(".user-id").textContent = `Hello, ${userName}`;
+    const userEmail = localStorage.getItem("email");
+    const usernameDisplay = document.querySelector("#username");
+    const authButton = document.querySelector("#auth-btn");
+  
+    if (userEmail) {
+      usernameDisplay.textContent = userEmail;
+      authButton.textContent = "Log Out";
+  
+      authButton.removeEventListener("click", logout); // Ensure no duplicate listeners
+      authButton.addEventListener("click", logout); //  Attach logout function
+    } else {
+      usernameDisplay.textContent = "Guest";
+      authButton.textContent = "Log In";
+  
+      authButton.removeEventListener("click", loginRedirect); //  Ensure no duplicate listeners
+      authButton.addEventListener("click", loginRedirect); //  Attach login function
+    }
+
     loadQuestionById(currentQuestionId);
 });
 
+function loginRedirect() {
+    window.location.href = "../loginPage/login.html"; // Redirect to login page
+  }
 
 async function postScore() {
     let newArr=[...new Set(incorrectCategories)]

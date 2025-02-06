@@ -20,10 +20,19 @@ class UserResponse {
         const response = await db.query(
             `SELECT ur.response_id, ur.user_id, u.email, ur.score, ur.incorrect_categories
              FROM user_responses ur
-             LEFT JOIN users u ON ur.user_id = u.user_id;`
+             LEFT JOIN users u ON ur.user_id = u.user_id
+             ORDER BY ur.score DESC;
+             `
         );
-    
-        return response.rows.map(row => new UserResponse(row));
+        console.log("📌 Database Query Result:", response.rows);
+        console.log(response.rows.map(row => new UserResponse(row)));
+
+        return response.rows.map(row => {
+            const userResponse = new UserResponse(row);  
+            return { ...userResponse, email: row.email }; // Manually attach email
+        });
+
+        // return response.rows.map(row => new UserResponse(row));
     }
 
     static async create(data) {

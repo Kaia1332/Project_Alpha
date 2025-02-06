@@ -57,6 +57,22 @@ nav a:hover {
   color: #ffffff;
 }
 
+#auth-btn {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#auth-btn:hover {
+  background: #005f8b;
+}
+
 #logout-btn {
   background: #ff5733; /* Red logout button */
   color: white;

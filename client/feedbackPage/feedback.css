@@ -73,6 +73,22 @@ h1 {
   color: #023e8a;
 }
 
+#auth-btn {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#auth-btn:hover {
+  background: #005f8b;
+}
+
 nav {
   width: 100%;
   display: flex;
@@ -129,3 +145,48 @@ nav a:hover {
   #logout-btn:hover {
     background: #e0482e; /* Slightly darker red on hover */
   }
+
+  /* Leaderboard Table Styling */
+.leaderboard {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header */
+.leaderboard thead {
+  background-color: #0077b6;
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+/* Table Rows */
+.leaderboard th, .leaderboard td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Highlight the Top 3 Players */
+.leaderboard tbody tr:nth-child(1) {
+  background-color: #ffd700; /* Gold */
+  font-weight: bold;
+}
+.leaderboard tbody tr:nth-child(2) {
+  background-color: #c0c0c0; /* Silver */
+}
+.leaderboard tbody tr:nth-child(3) {
+  background-color: #cd7f32; /* Bronze */
+}
+
+/* Hover Effect */
+.leaderboard tbody tr:hover {
+  background-color: rgba(0, 119, 182, 0.2);
+}

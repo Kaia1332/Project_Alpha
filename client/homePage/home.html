@@ -20,16 +20,15 @@
     <title>Home Page</title>
   </head>
   <body>
-
     <nav>
-      <ul class="nav-links">
-        <a href="#">Home</a>
-        <a id="quiz-link">Quiz</a>
-        <a href="../feedbackPage/feedback.html">Feedback</a>
+      <ul>
+        <a href="../homePage/home.html">Home</a>
+        <a href="../quizPage/quiz.html">Quiz</a>
+        <a href="../feedbackPage/feedback.html">Leaderboard</a>
       </ul>
       <div class="user-actions">
-        <div class="user-id">Hello, ${user_id}</div>
-        <button id="logout-btn" onclick="logout()">Log Out</button>
+        <div class="user-id">Hello, <span id="username">Guest</span></div>
+        <button id="auth-btn">Log In</button>
       </div>
     </nav>
 

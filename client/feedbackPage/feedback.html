@@ -13,44 +13,46 @@
     <link rel="stylesheet" href="feedback.css" />
     <script src="feedback.js" defer></script>
 
-    <title>Feedback Page</title>
+    <title>Leaderboard Page</title>
   </head>
   <body>
     <nav>
       <ul>
         <a href="../homePage/home.html">Home</a>
         <a href="../quizPage/quiz.html">Quiz</a>
-        <a href="./feedback.html">Feedback</a>
+        <a href="./feedback.html">Leaderboard</a>
       </ul>
       <div class="user-actions">
-        <div class="user-id">Hello, ${user_id}</div>
-        <button id="logout-btn" onclick="logout()">Log Out</button>
+        <div class="user-id">Hello, <span id="username">Guest</span></div>
+        <button id="auth-btn">Log In</button>
       </div>
     </nav>
-    <h1>Feedback</h1>
-    <div class="container">
-      <div>
-        <h2>Your feedback</h2>
-        <article></article>
-      </div>
-    </div>
 
     <h1>Weekly Ranking</h1>
     <div class="container">
+      <table class="leaderboard">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Incorrect Categories</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- <h1>Feedback</h1> -->
+    <div class="container">
       <div>
         <article>
-          <table class="leaderboard" border="1">
-            <tbody>
-              <tr>
-                <th>Name</th>
-                <th>Score</th>
-              </tr>
-            </tbody>
-          </table>
+          <h2>Your Feedback</h2>
+          <p>Loading feedback...</p>
         </article>
       </div>
     </div>
-    
-    <footer>&copy; MIKEN</footer>
+
+    <footer>&copy; MINKE</footer>
   </body>
 </html>
