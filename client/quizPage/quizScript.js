@@ -76,6 +76,25 @@ function displayQuestion(questionData) {
     document.getElementById("next-btn").style.display = "none"; // Hide "Next" until an answer is selected
 }
 
+// Colouring for difficulty level
+document.addEventListener("DOMContentLoaded", function () {
+  const difficultyElement = document.getElementById("difficulty");
+
+  if (difficultyElement) {
+    const difficultyText = difficultyElement.innerText.trim(); // Get text and remove spaces
+
+    // Assign class based on difficulty
+    if (difficultyText === "Easy") {
+      difficultyElement.classList.add("easy");
+    } else if (difficultyText === "Medium") {
+      difficultyElement.classList.add("medium");
+    } else if (difficultyText === "Hard") {
+      difficultyElement.classList.add("hard");
+    }
+  }
+});
+
+
 // Check if the selected answer is correct
 function checkAnswer(selected, correct,category) {
     const resultMessage = document.getElementById("result-message");
