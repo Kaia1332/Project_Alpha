@@ -68,5 +68,5 @@ function logout() {
   localStorage.removeItem("token"); // Clear authentication token
   localStorage.removeItem("email");
   localStorage.removeItem("userId");
-  window.location.href = "home.html"; // Redirect to login page
+  window.location.href = "homePage/home.html"; // Redirect to login page
 }
