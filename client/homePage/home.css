@@ -164,7 +164,6 @@ h1 {
   margin-bottom: 0px;
   text-align: center;
   color: #023e8a;
-  font-size: 60px;
-  
-  text-shadow: #FC0 1px 0 10px;
+  font-size: 80px;
+  text-shadow: #023e8a 1px 0 10px;
 }
