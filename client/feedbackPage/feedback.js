@@ -137,7 +137,7 @@ function generateFeedback(incorrectCategories) { //NEW CATEGORIES
     "Human Geography":
       "Enhance your knowledge of Human Geography! Learn about population distribution, urbanization, and human-environment interactions.",
   };
-}
+
 
 
   let feedback = incorrectCategories.map(
