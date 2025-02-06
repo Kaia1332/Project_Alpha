@@ -22,7 +22,7 @@ nav {
   justify-content: space-between;
   background-color: #023e8a;
   padding: 10px 20px;
-  height:50px;
+  height: 50px;
 }
 nav ul {
   display: flex;
@@ -159,7 +159,7 @@ article {
 }
 
 h1 {
-    font-family: "Doto", serif;
+  font-family: "Doto", serif;
   margin-top: 50px;
   margin-bottom: 0px;
   text-align: center;

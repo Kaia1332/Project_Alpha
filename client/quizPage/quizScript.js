@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/quiz"; // Your API base URL
+const API_URL = "https://project-alpha-89wj.onrender.com/quiz"; // Your API base URL
 let currentQuestionId = 1; // Start with the first question
 let totalQuestions = 10; // Change this based on total questions available
 let questionsanswered = 0;
@@ -59,7 +59,7 @@ async function loadQuestionById(questionId) {
 function displayQuestion(questionData) {
     document.getElementById("question-text").textContent = questionData.question;
     document.getElementById("question-count").textContent = `Question ${index+1} of ${totalQuestions}`;
-
+    document.getElementById("question-difficulty").textContent = `Difficulty: ${questionData.difficulty_level}`;
 
     optionsContainer.innerHTML = ""; // Clear previous options
 
@@ -101,8 +101,8 @@ function nextQuestion() {
     randomNumbers[index++];
     if (questionsanswered === totalQuestions) {
         const resultMessage = document.getElementById("result-message");
-        document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
-        document.getElementById("question-container").innerHTML = `<h2>You Scored ${score} out of 10</h2>`;
+        document.getElementById("question-container").innerHTML = `<h2>Quiz Complete!</h2>
+                                                                 <h2>You Scored ${score} out of 10</h2>`;
 
         const uniqueIncorrectCategories = [...new Set(incorrectCategories)];
         if(uniqueIncorrectCategories.length>0){
@@ -167,7 +167,7 @@ async function postScore() {
         })
     }
 
-    const response = await fetch("http://localhost:3000/user_response", options);
+    const response = await fetch("https://project-alpha-89wj.onrender.com/user_response", options);
     const data = await response.json();
 
     if (response.status == 201) {
@@ -181,6 +181,6 @@ function logout() {
     console.log("Logging out...");
     localStorage.removeItem("token"); // Clear authentication token
     localStorage.removeItem("email")
-    localStorage.removeItem("user_id")
+    localStorage.removeItem("userId")
     window.location.href = "../loginPage/login.html"; // Redirect to login page
 }

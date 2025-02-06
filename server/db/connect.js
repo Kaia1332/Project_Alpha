@@ -9,9 +9,16 @@ const { Pool } = require("pg");
 //   });
 
 const db = new Pool({
-    connectionString: process.env.DB_URL
-})
+    connectionString: process.env.DATABASE_URL,
+    ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false, // Enable SSL only in production
+  });
 
 console.log("DB connection established.");
 
+db.connect()
+  .then(() => console.log("Database connection established successfully."))
+  .catch((err) => {
+    console.error("Database connection error:", err.message);
+    process.exit(1); // Exit the process if the database connection fails
+  });
 module.exports = db;
