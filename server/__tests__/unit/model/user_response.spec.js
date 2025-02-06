@@ -41,5 +41,30 @@ describe('user_response',()=>{
             expect(result).toHaveProperty('score', 9);
         });
     });
+
+    describe('getAll', () => {
+        it('resolves with all user responses and associated emails', async () => {
+            const testUserResponses = [
+                { response_id: 1, user_id: 1, score: 9, incorrect_categories: ['category1'], email: 'user1@example.com' },
+                { response_id: 2, user_id: 2, score: 7, incorrect_categories: ['category2'], email: 'user2@example.com' },
+            ];
+ 
+            // Mock the DB query to return multiple user responses
+            jest.spyOn(db, 'query').mockResolvedValueOnce({ rows: testUserResponses });
+ 
+            const result = await UserResponse.getAll();
+ 
+            expect(result).toHaveLength(2);
+            expect(result[0]).toHaveProperty('score', 9);
+            expect(result[0]).toHaveProperty('email', 'user1@example.com');
+        });
+ 
+        it('should throw an error if the query fails', async () => {
+            // Mock the DB query to simulate an error
+            jest.spyOn(db, 'query').mockRejectedValueOnce(new Error('Database query error'));
+ 
+            await expect(UserResponse.getAll()).rejects.toThrow('Database query error');
+        });
+    });
     
 })

@@ -24,7 +24,7 @@ class UserResponse {
              ORDER BY ur.score DESC;
              `
         );
-        console.log("📌 Database Query Result:", response.rows);
+        console.log("Database Query Result:", response.rows);
         console.log(response.rows.map(row => new UserResponse(row)));
 
         return response.rows.map(row => {

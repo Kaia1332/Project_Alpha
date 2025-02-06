@@ -33,16 +33,6 @@ class Mcq {
         }
         return new Mcq(response.rows[0])
     }
-
-    // static async create(data) {
-    // }
-
-    // async update(data) {
-
-    // }
-
-    // async destroy() {
-    // }
 }
 
 module.exports = Mcq
