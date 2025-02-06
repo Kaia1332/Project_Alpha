@@ -161,7 +161,7 @@ article {
 
 h1 {
   font-family: "Doto", serif;
-/*   margin-top:50px; */
+  margin-top:0px;
   margin-bottom: 0px;
   text-align: center;
   color: #023e8a;
@@ -171,7 +171,6 @@ h1 {
 h3{
   font-family: "Doto", serif;
   margin-top:50px;
-  margin-bottom: 0px;
   text-align: center;
   color: #023e8a;
   font-size: 40px;
