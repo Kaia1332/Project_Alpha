@@ -215,7 +215,7 @@ async function postScore() {
     const data = await response.json();
 
     if (response.status == 201) {
-        window.location.assign("../homePage/home.html");
+        window.location.assign("../feedbackPage/feedback.html");
     } else {
         alert(data.error);
     }
