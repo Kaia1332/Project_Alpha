@@ -37,6 +37,45 @@ CREATE TABLE user_responses (
 INSERT INTO mcq 
 (question, option_a, option_b, option_c, option_d, correct_answer, difficulty_level, category) 
 VALUES
+-- Nature Geography Questions (Easy, Medium, Hard)
+('Which biome is characterized by low temperatures and permafrost?', 'Tundra', 'Desert', 'Rainforest', 'Savanna', 'A', 'Easy', 'Nature Geography'),
+('What is the largest rainforest in the world?', 'Congo Rainforest', 'Daintree Rainforest', 'Amazon Rainforest', 'Borneo Rainforest', 'C', 'Easy', 'Nature Geography'),
+('Which of these is a major cause of desertification?', 'Deforestation', 'Volcanic Eruption', 'Tsunami', 'Hurricane', 'A', 'Easy', 'Nature Geography'),
+('What is a watershed?', 'A natural barrier blocking water flow', 'An area of land that drains into a river', 'A deep ocean trench', 'A type of underground water source', 'B', 'Easy', 'Nature Geography'),
+('Which of the following is a freshwater ecosystem?', 'Coral reef', 'Mangrove forest', 'Pond', 'Open ocean', 'C', 'Easy', 'Nature Geography'),
+
+('What is the process of rocks breaking down due to weather exposure?', 'Erosion', 'Weathering', 'Sedimentation', 'Deposition', 'B', 'Medium', 'Nature Geography'),
+('Which type of volcano has explosive eruptions?', 'Shield volcano', 'Cinder cone volcano', 'Composite volcano', 'Fissure volcano', 'C', 'Medium', 'Nature Geography'),
+('What is the largest coral reef system in the world?', 'Great Barrier Reef', 'Belize Barrier Reef', 'Red Sea Coral Reef', 'New Caledonia Barrier Reef', 'A', 'Medium', 'Nature Geography'),
+('What term describes a valley carved by glaciers?', 'Gorge', 'Fjord', 'Canyon', 'Delta', 'B', 'Medium', 'Nature Geography'),
+('What is a meander?', 'A type of rock formation', 'A winding curve in a river', 'A volcanic crater', 'A coral reef structure', 'B', 'Medium', 'Nature Geography'),
+
+('Which type of rock is formed from the cooling and solidification of magma?', 'Sedimentary', 'Igneous', 'Metamorphic', 'Fossiliferous', 'B', 'Hard', 'Nature Geography'),
+('What is the term for a steep, nearly vertical cliff face formed by erosion?', 'Escarpment', 'Mesa', 'Basin', 'Rift Valley', 'A', 'Hard', 'Nature Geography'),
+('Which natural landform is created when a river cuts deeply into bedrock over time?', 'Plateau', 'Canyon', 'Delta', 'Fjord', 'B', 'Hard', 'Nature Geography'),
+('What is the largest drainage basin in the world?', 'Nile Basin', 'Amazon Basin', 'Ganges-Brahmaputra Basin', 'Congo Basin', 'B', 'Hard', 'Nature Geography'),
+('What is a karst landscape primarily formed by?', 'Glacial activity', 'Volcanic eruptions', 'Dissolution of soluble rocks', 'Tectonic movements', 'C', 'Hard', 'Nature Geography'),
+
+-- Human Geography Questions (Easy, Medium, Hard)
+('What is urbanization?', 'Growth of rural areas', 'Increase in city populations', 'Decrease in industrial activity', 'Expansion of forests', 'B', 'Easy', 'Human Geography'),
+('Which factor most influences population density?', 'Climate', 'Government policies', 'Elevation', 'Access to water', 'D', 'Easy', 'Human Geography'),
+('What is a push factor in migration?', 'A reason attracting people to a place', 'A reason making people leave a place', 'A type of farming method', 'A form of pollution', 'B', 'Easy', 'Human Geography'),
+('Which of these is an example of a primary economic activity?', 'Banking', 'Farming', 'Teaching', 'Retail sales', 'B', 'Easy', 'Human Geography'),
+('What is a megalopolis?', 'A small rural town', 'A single large city', 'A region with multiple large cities', 'A farming community', 'C', 'Easy', 'Human Geography'),
+
+('What is GDP?', 'Global Distribution Policy', 'Gross Domestic Product', 'General Development Plan', 'Geographical Data Processing', 'B', 'Medium', 'Human Geography'),
+('Which of the following is an example of a secondary economic activity?', 'Fishing', 'Car manufacturing', 'Marketing', 'Software development', 'B', 'Medium', 'Human Geography'),
+('What is carrying capacity?', 'The number of people an area can support sustainably', 'The maximum weight a bridge can hold', 'The amount of food a region can produce', 'The level of pollution a city can handle', 'A', 'Medium', 'Human Geography'),
+('Which city is often called the financial capital of the world?', 'London', 'New York', 'Tokyo', 'Dubai', 'B', 'Medium', 'Human Geography'),
+('What is the term for a community that relies heavily on one industry?', 'Sustainable city', 'Industrial complex', 'Single-industry town', 'Free market zone', 'C', 'Medium', 'Human Geography'),
+
+('What is gentrification?', 'The process of urban renewal leading to increased property values', 'The expansion of slums in urban areas', 'A decrease in economic activity in a city', 'A method of farming in developing nations', 'A', 'Hard', 'Human Geography'),
+('What is the primary purpose of the United Nations Human Development Index (HDI)?', 'To measure economic productivity', 'To rank countries based on human well-being', 'To track military spending', 'To study climate change', 'B', 'Hard', 'Human Geography'),
+('What is an example of a tertiary economic activity?', 'Mining', 'Teaching', 'Iron smelting', 'Fishing', 'B', 'Hard', 'Human Geography'),
+('Which of the following is a major impact of globalization?', 'Increased isolation of countries', 'More economic interdependence', 'A decrease in international trade', 'Stronger barriers between nations', 'B', 'Hard', 'Human Geography'),
+('What is a remittance?', 'A payment made by a government to citizens', 'Money sent home by migrants working abroad', 'A type of business loan', 'A form of taxation on imported goods', 'B', 'Hard', 'Human Geography'),
+
+--OLDER QUESTIONS--
 ('What causes wind to form?', 'Differences in air pressure', 'The rotation of the Earth', 'Changes in ocean temperature', 'The movement of tectonic plates', 'A', 'Easy', 'Weather'),
 ('What type of clouds are associated with thunderstorms?', 'Cirrus', 'Stratus', 'Cumulonimbus', 'Cumulus', 'C', 'Easy', 'Weather'),
 ('What is the main source of energy for the Earth''s weather systems?', 'The Moon', 'The Sun', 'The Oceans', 'The Core of the Earth', 'B', 'Easy', 'Weather'),
