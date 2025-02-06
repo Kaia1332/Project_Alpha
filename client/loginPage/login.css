@@ -7,6 +7,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  background-color: #caf0f8;
   background-image: url(../assets/background.png);
   background-size: contain; 
   background-position: center; 
