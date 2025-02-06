@@ -62,7 +62,10 @@ async function loadQuestionById(questionId) {
 function displayQuestion(questionData) {
     document.getElementById("question-text").textContent = questionData.question;
     document.getElementById("question-count").textContent = `Question ${index+1} of ${totalQuestions}`;
-    document.getElementById("question-difficulty").textContent = `Difficulty: ${questionData.difficulty_level}`;
+    // document.getElementById("question-difficulty").textContent = `Difficulty: ${questionData.difficulty_level}`;
+    document.getElementById("difficulty").textContent = questionData.difficulty_level;
+
+    updateDifficultyColor();
 
     optionsContainer.innerHTML = ""; // Clear previous options
 
@@ -189,7 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     loadQuestionById(currentQuestionId);
-    updateDifficultyColor();
 });
 
 function loginRedirect() {
