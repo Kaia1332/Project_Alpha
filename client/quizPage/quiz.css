@@ -38,6 +38,22 @@ h2 {
   margin-bottom: 3vh;
 }
 
+/* DIFFICULTY Level Styling  */
+.easy {
+  color: #28a745; /* Green */
+  font-weight: bold;
+}
+
+.medium {
+  color: #fd7e14; /* Orange */
+  font-weight: bold;
+}
+
+.hard {
+  color: #dc3545; /* Red */
+  font-weight: bold;
+}
+
 /* Options Styling */
 #options button {
   display: block;
