@@ -8,7 +8,11 @@ const userResponseRouter = require("./routers/user_response")
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: ['https://your-frontend-url.onrender.com'], // Allow only the front-end URL
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow Authorization header
+}));
+
 app.use(express.json())
 app.use(logger)
 
