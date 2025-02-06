@@ -36,6 +36,9 @@ async function loadQuestionById(questionId) {
 
         const response = await fetch(`${API_URL}/${randomNumbers[index]}`, options);
 
+        //CLG HIT
+        console.log('RESPONSE STATUS HIT: ' + response)
+        
         if (response.status == 200) {
             const data = await response.json();
             console.log("Received question:", data);
@@ -46,9 +49,9 @@ async function loadQuestionById(questionId) {
                 document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
                 document.getElementById("next-btn").style.display = "none";
             }
-        } else {
-            window.location.assign("../loginPage/login.html");
-        }
+        }// else {
+           // window.location.assign("../loginPage/login.html");
+      //  }
 
     } catch (error) {
         console.error("Error fetching quiz data:", error);
