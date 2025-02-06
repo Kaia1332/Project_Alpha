@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const response = await fetch(
-        "https://project-alpha-89wj.onrender.com/register",
+        "https://project-alpha-89wj.onrender.com/user/register",
         options
       );
       const data = await response.json();
