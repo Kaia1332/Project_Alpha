@@ -124,19 +124,21 @@ function getScoreFeedback(score) {
   }
 }
 
-function generateFeedback(incorrectCategories) {
+function generateFeedback(incorrectCategories) { //NEW CATEGORIES
   let feedbackMessages = {
-    Weather:
+    "Weather":
       "It looks like you're struggling with Weather concepts. Review climate patterns and meteorological effects.",
     "Climate Change":
       "Brush up on Climate Change topics! Consider studying greenhouse gases and global warming effects.",
     "Natural Disasters":
       "You may need to revisit Natural Disasters. Focus on causes and responses to earthquakes, tsunamis, and hurricanes.",
-    Geography:
-      "Improve your Geography knowledge! Try learning more about continents, maps, and landforms.",
-    Science:
-      "Science concepts can be tricky! Consider reviewing fundamental scientific principles.",
+    "Nature Geography":
+      "Improve your understanding of natural landscapes! Study biomes, ecosystems, rivers, and mountain formations.",
+    "Human Geography":
+      "Enhance your knowledge of Human Geography! Learn about population distribution, urbanization, and human-environment interactions.",
   };
+}
+
 
   let feedback = incorrectCategories.map(
     (category) =>
