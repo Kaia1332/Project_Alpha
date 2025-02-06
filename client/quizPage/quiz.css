@@ -1,96 +1,211 @@
 /* Warm blue and white theme based on Coolors palette */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #CAF0F8; /* Lightest blue */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #caf0f8; /* Lightest blue */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100vh; */
+  margin: 0;
+  background-image: url(../../Instructions/Assets/background.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Quiz Container */
 .quiz-container {
-    width: 50vh;
-    padding: 5vh;
-    background: white;
-    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
-    border-radius: 4vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 5vh;
+  border-radius: 2vh;
+  box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+  width: 50vh;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Question Styling */
 h2 {
-    color: #0077B6; /* Medium blue */
-    font-size: 3vh;
-    margin-bottom: 3vh;
+  color: #0077b6; /* Medium blue */
+  font-size: 3vh;
+  margin-bottom: 3vh;
 }
 
 /* Options Styling */
 #options button {
-    display: block;
-    width: 100%;
-    margin: 1vh 0;
-    padding: 2vh;
-    border: none;
-    border-radius: 1vh;
-    background: #0077B6; /* Primary blue */
-    color: white;
-    font-size: 2vh;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  display: block;
+  width: 100%;
+  margin: 1vh 0;
+  padding: 2vh;
+  border: none;
+  border-radius: 1vh;
+  background: #0077b6; /* Primary blue */
+  color: white;
+  font-size: 2vh;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 #options button:hover {
-    background: #023E8A; /* Darker blue */
+  background: #023e8a; /* Darker blue */
 }
 
 /* Next Button */
 #next-btn {
-    display: none;
-    margin-top: 2vh;
-    padding: 2vh 4vh;
-    border: none;
-    border-radius: 1vh;
-    background: #0096C7; /* Bright blue */
-    color: white;
-    font-size: 2vh;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  display: none;
+  margin-top: 2vh;
+  padding: 2vh 4vh;
+  border: none;
+  border-radius: 1vh;
+  background: #0096c7; /* Bright blue */
+  color: white;
+  font-size: 2vh;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .submit-btn {
-    display: none;
-    margin-top: 2vh;
-    padding: 2vh 4vh;
-    border: none;
-    border-radius: 1vh;
-    background: #0096C7; /* Bright blue */
-    color: white;
-    font-size: 2vh;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  display: none;
+  margin-top: 2vh;
+  padding: 2vh 4vh;
+  border: none;
+  border-radius: 1vh;
+  background: #0096c7; /* Bright blue */
+  color: white;
+  font-size: 2vh;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 #next-btn:hover {
-    background: #023E8A; /* Darker blue */
+  background: #023e8a; /* Darker blue */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .quiz-container {
-        width: 80%;
-        padding: 4vh;
-    }
+  .quiz-container {
+    width: 80%;
+    padding: 4vh;
+  }
 
-    #options button {
-        font-size: 1.8vh;
-    }
+  #options button {
+    font-size: 1.8vh;
+  }
 
-    #next-btn {
-        font-size: 1.8vh;
-    }
+  #next-btn {
+    font-size: 1.8vh;
+  }
+}
+
+/* Navbar Styling */
+/* .navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+/* nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color:#023e8a;
+    padding: 10px 20px;
+} */
+
+nav {
+  width: 100%;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: space-between;
+  background-color: #023e8a;
+  padding: 10px 20px;
+  height: 50px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 50px; /* Added spacing between links */
+}
+nav a {
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* .nav-link {
+    color: white;
+    font-size: 2vh;
+    text-decoration: none;
+    margin-left: 5vh;
+    /* font-weight: bold;
+} */
+
+/* .nav-link:hover {
+    color: #CAF0F8; /* Light blue
+} */
+
+/* Logout Button */
+#logout-btn {
+  background: #ff5733; /* Red logout button */
+  color: white;
+  border: none;
+  padding: 1.5vh 3vh;
+  border-radius: 1vh;
+  font-size: 2vh;
+  cursor: pointer;
+  margin-right: 2vh;
+}
+
+#logout-btn:hover {
+  background: #c70039; /* Darker red */
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between user ID and logout button */
+}
+.user-id {
+  /* position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff; */
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#auth-btn {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#auth-btn:hover {
+  background: #005f8b;
 }

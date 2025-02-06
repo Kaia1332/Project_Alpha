@@ -6,7 +6,9 @@ let score = 0;
 let index=0;
 const quizContainer = document.querySelector(".quiz-container");
 const optionsContainer = document.getElementById("options");
-let userID=0;
+let userID= localStorage.getItem("userId");
+let incorrectCategories = [];
+const userName = localStorage.getItem("email") || "Guest";
 
 function generateUniqueNumbers(count, max) {
     const numbers = new Set();
@@ -19,7 +21,6 @@ function generateUniqueNumbers(count, max) {
 
 const randomNumbers = generateUniqueNumbers(10, 25);
 console.log(randomNumbers);
-
 
 
 // Fetch a question by ID
@@ -35,21 +36,19 @@ async function loadQuestionById(questionId) {
 
         const response = await fetch(`${API_URL}/${randomNumbers[index]}`, options);
 
-        const data = await response.json();
-        console.log("Received question:", data);
-
-        if (data.question_id) {
-            displayQuestion(data);
+        if (response.status == 200) {
+            const data = await response.json();
+            console.log("Received question:", data);
+            console.log(response);
+            if (data.question_id) {
+                displayQuestion(data);
+            } else {
+                document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
+                document.getElementById("next-btn").style.display = "none";
+            }
         } else {
-            document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
-            document.getElementById("next-btn").style.display = "none";
+            window.location.assign("../loginPage/login.html");
         }
-
-        // if (!response.ok) {
-        //     throw new Error(`HTTP error! Status: ${response.status}`);
-        // } else {
-
-        // }
 
     } catch (error) {
         console.error("Error fetching quiz data:", error);
@@ -67,7 +66,7 @@ function displayQuestion(questionData) {
     ["A", "B", "C", "D"].forEach((option) => {
         const btn = document.createElement("button");
         btn.textContent = `${option}: ${questionData[`option_${option.toLowerCase()}`]}`; // Add A, B, C, D
-        btn.onclick = () => checkAnswer(option, questionData.correct_answer);
+        btn.onclick = () => checkAnswer(option, questionData.correct_answer, questionData.category);
         optionsContainer.appendChild(btn);
     });
 
@@ -75,7 +74,7 @@ function displayQuestion(questionData) {
 }
 
 // Check if the selected answer is correct
-function checkAnswer(selected, correct) {
+function checkAnswer(selected, correct,category) {
     const resultMessage = document.getElementById("result-message");
     questionsanswered++;
 
@@ -88,6 +87,7 @@ function checkAnswer(selected, correct) {
         console.log(score);
         resultMessage.textContent = `Incorrect! The correct answer was ${correct}`;
         resultMessage.style.color = "red";
+        incorrectCategories.push(category);
     }
 
     // Disable buttons after answer is selected
@@ -103,25 +103,57 @@ function nextQuestion() {
         const resultMessage = document.getElementById("result-message");
         document.getElementById("question-container").innerHTML = "<h2>Quiz Complete!</h2>";
         document.getElementById("question-container").innerHTML = `<h2>You Scored ${score} out of 10</h2>`;
+
+        const uniqueIncorrectCategories = [...new Set(incorrectCategories)];
+        if(uniqueIncorrectCategories.length>0){
+            document.getElementById("question-container").innerHTML += `
+                <div class="catsStruggled">
+                    <h2>Categories you struggled with:</h2>
+                    <ul>${uniqueIncorrectCategories.map(category => `<li>${category}</li>`).join('')}</ul>
+                </div>`;
+        }
+
         resultMessage.textContent = ''
         document.getElementById("question-count").textContent = '';
         document.querySelector("#next-btn").textContent = "Submit";
-        // Add event listener to the button
         document.querySelector("#next-btn").addEventListener("click",postScore);
 
     } else {
-        document.getElementById("result-message").textContent = ""; // Clear feedback message
+        document.getElementById("result-message").textContent = ""; 
         loadQuestionById(currentQuestionId);
     }
 }
 
 // Load the first question on page load
 document.addEventListener("DOMContentLoaded", () => {
+    // document.querySelector(".user-id").textContent = `Hello, ${userName}`;
+    const userEmail = localStorage.getItem("email");
+    const usernameDisplay = document.querySelector("#username");
+    const authButton = document.querySelector("#auth-btn");
+  
+    if (userEmail) {
+      usernameDisplay.textContent = userEmail;
+      authButton.textContent = "Log Out";
+  
+      authButton.removeEventListener("click", logout); // Ensure no duplicate listeners
+      authButton.addEventListener("click", logout); //  Attach logout function
+    } else {
+      usernameDisplay.textContent = "Guest";
+      authButton.textContent = "Log In";
+  
+      authButton.removeEventListener("click", loginRedirect); //  Ensure no duplicate listeners
+      authButton.addEventListener("click", loginRedirect); //  Attach login function
+    }
+
     loadQuestionById(currentQuestionId);
 });
 
+function loginRedirect() {
+    window.location.href = "../loginPage/login.html"; // Redirect to login page
+  }
 
-async function postScore(score) {
+async function postScore() {
+    let newArr=[...new Set(incorrectCategories)]
     const options = {
         method: "POST",
         headers: {
@@ -130,16 +162,25 @@ async function postScore(score) {
         },
         body: JSON.stringify({
             user_id: userID,
-            score: score
+            score: score,
+            incorrect_categories: newArr
         })
     }
 
-    const response = await fetch("http://localhost:3000/users/register", options);
+    const response = await fetch("http://localhost:3000/user_response", options);
     const data = await response.json();
 
     if (response.status == 201) {
-        window.location.assign("login.html");
+        window.location.assign("../homePage/home.html");
     } else {
         alert(data.error);
     }
+}
+
+function logout() {
+    console.log("Logging out...");
+    localStorage.removeItem("token"); // Clear authentication token
+    localStorage.removeItem("email")
+    localStorage.removeItem("user_id")
+    window.location.href = "../loginPage/login.html"; // Redirect to login page
 }

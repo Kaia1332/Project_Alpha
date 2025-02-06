@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geography Quiz</title>
-    <link rel="stylesheet" href="quiz.css">
-</head>
-<body>
+    <link rel="stylesheet" href="quiz.css" />
+  </head>
+  <body>
+    <!-- <nav>
+      <ul>
+        <a href="../homePage/home.html">Home</a>
+        <a href="../quizPage/quiz.html">Quiz</a>
+        <a href="../feedbackPage/feedback.html">Leaderboard</a>
+      </ul>
+      <div class="user-actions">
+        <div class="user-id">Hello, ${user_id}</div>
+        <button id="auth-btn">Log In</button> 
+        <button id="logout-btn" onclick="logout()">Log Out</button>
+      </div>
+    </nav> -->
+    <nav>
+      <ul>
+        <a href="../homePage/home.html">Home</a>
+        <a href="../quizPage/quiz.html">Quiz</a>
+        <a href="../feedbackPage/feedback.html">Leaderboard</a>
+      </ul>
+      <div class="user-actions">
+        <div class="user-id">Hello, <span id="username">Guest</span></div>
+        <button id="auth-btn">Log In</button>
+      </div>
+    </nav>
+
+    <h1>Geography Quiz</h1>
+
     <div class="quiz-container">
-        <h1>Geography Quiz</h1>
-        <p id="question-count">Question 1</p> <!-- Shows current question count -->
-        <p id="question-difficulty"></p> <!-- Shows difficulty level -->
-        <div id="question-container">
-            <p id="question-text"></p>
-            <div id="options"></div>
-        </div>
-        <p id="result-message"></p> <!-- Shows correct/incorrect feedback -->
-        <button id="next-btn" onclick="nextQuestion()" style="display:none;">Next Question</button>
+ 
+      <p id="question-count">Question 1</p>
+      <p id="question-difficulty"></p>
+      <div id="question-container">
+        <p id="question-text"></p>
+        <div id="options"></div>
+      </div>
+      <p id="result-message"></p>
+      <button id="next-btn" onclick="nextQuestion()" style="display: none">
+        Next Question
+      </button>
     </div>
 
     <script src="quizScript.js" defer></script>
-</body>
+  </body>
 </html>

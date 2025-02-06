@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("📬 Server Response:", data);
 
             if (response.ok) {
-                // alert("Registration successful!");
+                alert("Registration successful!");
                 console.log(data);
-                // window.location.assign("../loginPage/login.html"); // Redirect to login
+                window.location.assign("../loginPage/login.html"); // Redirect to login
             } else {
                 alert(data.error || "Registration failed. Please try again.");
             }

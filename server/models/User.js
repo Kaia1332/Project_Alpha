@@ -16,6 +16,7 @@ class User {
         }
         return new User(response.rows[0]);
     }
+    
     static async getOneByEmail(email) {
         try {
             console.log("Querying for email: ", email);
@@ -29,23 +30,6 @@ class User {
             throw new Error("Database query failed");
         }
     }
-    static async getOneByUsername(email) {
-        const response = await db.query("SELECT * FROM users WHERE email = $1;", [email]);
-        console.log("response is: " + response.rows.length);
-
-        // if (response.rows.length != 1) {
-        //     throw new Error("Unable to locate user.");
-        // }
-        return new User(response.rows[0]);
-    }
-
-    // static async getOneByUsername(username) {
-    //     const response = await db.query("SELECT * FROM users WHERE username = $1", [username]);
-    //     if (response.rows.length != 1) {
-    //         throw new Error("Unable to locate user.");
-    //     }
-    //     return new User(response.rows[0]);
-    // }
 
     static async create(data) {
         const { user_type, password, email } = data;

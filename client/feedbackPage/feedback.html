@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="feedback.css" />
+    <script src="feedback.js" defer></script>
+
+    <title>Leaderboard Page</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <a href="../homePage/home.html">Home</a>
+        <a href="../quizPage/quiz.html">Quiz</a>
+        <a href="./feedback.html">Leaderboard</a>
+      </ul>
+      <div class="user-actions">
+        <div class="user-id">Hello, <span id="username">Guest</span></div>
+        <button id="auth-btn">Log In</button>
+      </div>
+    </nav>
+
+    <h1>Weekly Ranking</h1>
+    <div class="container">
+      <table class="leaderboard">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Incorrect Categories</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- <h1>Feedback</h1> -->
+    <div class="container">
+      <div>
+        <article>
+          <h2>Your Feedback</h2>
+          <p>Loading feedback...</p>
+        </article>
+      </div>
+    </div>
+
+    <footer>&copy; MINKE</footer>
+  </body>
+</html>
