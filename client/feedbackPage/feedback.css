@@ -8,7 +8,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: #caf0f8;
-  background-image: url(../../Instructions/Assets/background.png);
+  background-image: url(../assets/background.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
