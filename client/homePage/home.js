@@ -54,6 +54,6 @@ function logout() {
   console.log("Logging out...");
   localStorage.removeItem("token"); // Clear authentication token
   localStorage.removeItem("email")
-  localStorage.removeItem("user_id")
+  localStorage.removeItem("userId")
   window.location.href = "home.html"; // Redirect to login page
 }

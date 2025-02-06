@@ -8,7 +8,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: #caf0f8;
-  background-image: url(../../Instructions/Assets/background.png);
+  background-image: url(../assets/background.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,7 +22,7 @@ nav {
   justify-content: space-between;
   background-color: #023e8a;
   padding: 10px 20px;
-  height:50px;
+  height: 50px;
 }
 nav ul {
   display: flex;
@@ -159,7 +159,7 @@ article {
 }
 
 h1 {
-    font-family: "Doto", serif;
+  font-family: "Doto", serif;
   margin-top: 50px;
   margin-bottom: 0px;
   text-align: center;

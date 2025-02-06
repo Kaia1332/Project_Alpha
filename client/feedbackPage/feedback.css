@@ -8,7 +8,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: #caf0f8;
-  background-image: url(../../Instructions/Assets/background.png);
+  background-image: url(../assets/background.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -67,10 +67,20 @@ article {
   text-align: left;
   color: #023e8a;
 }
-h1 {
+/* h1 {
   margin-top: 50px;
   text-align: center;
   color: #023e8a;
+} */
+
+h1 {
+  font-family: "Doto", serif;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  text-align: center;
+  color: #023e8a;
+  font-size: 60px;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }
 
 #auth-btn {
@@ -120,33 +130,33 @@ nav a:hover {
   gap: 15px; /* Space between user ID and logout button */
 }
 .user-id {
-    /* position: absolute;
+  /* position: absolute;
       top: 15px;
       right: 20px;
       font-size: 18px;
       font-weight: bold;
       color: #ffffff; */
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffffff;
-  }
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
 
 #logout-btn {
-    background: #ff5733; /* Red logout button */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-right: 20px;
-  }
-  
-  #logout-btn:hover {
-    background: #e0482e; /* Slightly darker red on hover */
-  }
+  background: #ff5733; /* Red logout button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 20px;
+}
 
-  /* Leaderboard Table Styling */
+#logout-btn:hover {
+  background: #e0482e; /* Slightly darker red on hover */
+}
+
+/* Leaderboard Table Styling */
 .leaderboard {
   width: 100%;
   max-width: 600px;
@@ -168,7 +178,8 @@ nav a:hover {
 }
 
 /* Table Rows */
-.leaderboard th, .leaderboard td {
+.leaderboard th,
+.leaderboard td {
   padding: 12px 15px;
   text-align: center;
   border-bottom: 1px solid #ddd;

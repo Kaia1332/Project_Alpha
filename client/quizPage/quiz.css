@@ -8,8 +8,9 @@ body {
   align-items: center;
   justify-content: center;
   /* min-height: 100vh; */
+  min-height: 100vh;
   margin: 0;
-  background-image: url(../../Instructions/Assets/background.png);
+  background-image: url(../assets/background.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -85,6 +86,37 @@ h2 {
 
 #next-btn:hover {
   background: #023e8a; /* Darker blue */
+}
+
+.catsStruggled {
+  background: #f8d7da;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  width: fit-content;
+  margin: 15px auto;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.catsStruggled h2 {
+  color: #d90429;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.catsStruggled ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.catsStruggled li {
+  padding: 6px;
+  border-radius: 4px;
+  margin: 4px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #780000;
 }
 
 /* Responsive Design */
@@ -208,4 +240,24 @@ nav a:hover {
 
 #auth-btn:hover {
   background: #005f8b;
+}
+
+h1 {
+  font-family: "Doto", serif;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #023e8a;
+  font-size: 60px;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: #023e8a;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 14px;
 }
