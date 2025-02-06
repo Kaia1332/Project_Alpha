@@ -78,36 +78,38 @@ function displayQuestion(questionData) {
 
 
 // // COLOURING DIFFICULTY FUNCTION ----------------
-// function updateDifficultyColor() {
-//   const difficultyElement = document.getElementById("difficulty");
+// Function to apply difficulty color
+function updateDifficultyColor() {
+  const difficultyElement = document.getElementById("difficulty");
 
-//   if (difficultyElement) {
-//     const difficultyText = difficultyElement.innerText.trim(); // Get text and remove spaces
+  if (difficultyElement) {
+    const difficultyText = difficultyElement.innerText.trim(); // Get text and remove spaces
 
-//     // Remove any previously applied difficulty class
-//     difficultyElement.classList.remove("easy", "medium", "hard");
+    // Remove any previously applied difficulty class
+    difficultyElement.classList.remove("easy", "medium", "hard");
 
-//     // Assign class based on difficulty
-//     if (difficultyText === "Easy") {
-//       difficultyElement.classList.add("easy");
-//     } else if (difficultyText === "Medium") {
-//       difficultyElement.classList.add("medium");
-//     } else if (difficultyText === "Hard") {
-//       difficultyElement.classList.add("hard");
-//     }
-//   }
-// }
+    // Assign class based on difficulty text (case-insensitive comparison)
+    if (difficultyText.toLowerCase() === "easy") {
+      difficultyElement.classList.add("easy");
+    } else if (difficultyText.toLowerCase() === "medium") {
+      difficultyElement.classList.add("medium");
+    } else if (difficultyText.toLowerCase() === "hard") {
+      difficultyElement.classList.add("hard");
+    }
+  }
+}
 
-// // Ensure color is applied on initial page load
-// document.addEventListener("DOMContentLoaded", updateDifficultyColor);
+// Ensure color is applied on initial page load
+document.addEventListener("DOMContentLoaded", updateDifficultyColor);
 
-// // Ensure color is updated every time a new question loads
-// function loadQuestion(questionData) {
-//   document.getElementById("question-text").innerText = questionData.question;
-//   document.getElementById("difficulty").innerText = questionData.difficulty;
+// Load question and update difficulty
+function loadQuestion(questionData) {
+  document.getElementById("question-text").innerText = questionData.question;
+  document.getElementById("difficulty").innerText = questionData.difficulty;
 
-//   updateDifficultyColor(); // Apply the correct color dynamically
-// }
+  updateDifficultyColor(); // Apply the correct color dynamically
+}
+ 
 
 // // END OF COLOURING DIFFICULTY LEVEL -------------------------
 
