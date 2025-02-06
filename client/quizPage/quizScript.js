@@ -99,8 +99,9 @@ function updateDifficultyColor() {
   }
 }
 
-// Ensure color is applied on initial page load
-document.addEventListener("DOMContentLoaded", updateDifficultyColor);
+// // Ensure color is applied on initial page load
+// document.addEventListener("DOMContentLoaded", updateDifficultyColor);
+
 
 // Load question and update difficulty
 function loadQuestion(questionData) {
@@ -186,8 +187,9 @@ document.addEventListener("DOMContentLoaded", () => {
       authButton.removeEventListener("click", loginRedirect); //  Ensure no duplicate listeners
       authButton.addEventListener("click", loginRedirect); //  Attach login function
     }
-
+    
     loadQuestionById(currentQuestionId);
+    updateDifficultyColor();
 });
 
 function loginRedirect() {
