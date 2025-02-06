@@ -76,12 +76,16 @@ function displayQuestion(questionData) {
     document.getElementById("next-btn").style.display = "none"; // Hide "Next" until an answer is selected
 }
 
-// Colouring for difficulty level
-document.addEventListener("DOMContentLoaded", function () {
+
+// COLOURING DIFFICULTY FUNCTION ----------------
+function updateDifficultyColor() {
   const difficultyElement = document.getElementById("difficulty");
 
   if (difficultyElement) {
     const difficultyText = difficultyElement.innerText.trim(); // Get text and remove spaces
+
+    // Remove any previously applied difficulty class
+    difficultyElement.classList.remove("easy", "medium", "hard");
 
     // Assign class based on difficulty
     if (difficultyText === "Easy") {
@@ -92,7 +96,21 @@ document.addEventListener("DOMContentLoaded", function () {
       difficultyElement.classList.add("hard");
     }
   }
-});
+}
+
+// Ensure color is applied on initial page load
+document.addEventListener("DOMContentLoaded", updateDifficultyColor);
+
+// Ensure color is updated every time a new question loads
+function loadQuestion(questionData) {
+  document.getElementById("question-text").innerText = questionData.question;
+  document.getElementById("difficulty").innerText = questionData.difficulty;
+
+  updateDifficultyColor(); // Apply the correct color dynamically
+}
+
+// END OF COLOURING DIFFICULTY LEVEL -------------------------
+
 
 
 // Check if the selected answer is correct
