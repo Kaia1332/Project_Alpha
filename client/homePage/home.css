@@ -168,7 +168,8 @@ h1 {
   font-size: 80px;
   text-shadow: #023e8a 1px 0 10px;
 }
-h3{
+
+.small{
   font-family: "Doto", serif;
   margin-top:50px;
   text-align: center;
