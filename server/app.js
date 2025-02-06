@@ -9,7 +9,7 @@ const userResponseRouter = require("./routers/user_response")
 const app = express()
 
 app.use(cors({
-  origin: ['https://your-frontend-url.onrender.com'], // Allow only the front-end URL
+  origin: ['https://project-alpha-89wj.onrender.com'], // Allow only the front-end URL
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow Authorization header
 }));
 
