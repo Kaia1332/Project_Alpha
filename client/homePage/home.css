@@ -165,5 +165,6 @@ h1 {
   text-align: center;
   color: #023e8a;
   font-size: 60px;
-  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  
+  text-shadow: #FC0 1px 0 10px;
 }
