@@ -19,7 +19,7 @@ function generateUniqueNumbers(count, max) {
     return Array.from(numbers);
 }
 
-const randomNumbers = generateUniqueNumbers(10, 74); //CHANGE NUMBER OF QUESTIONS HERE
+const randomNumbers = generateUniqueNumbers(10, 55); //CHANGE NUMBER OF QUESTIONS HERE
 console.log(randomNumbers);
 
 
